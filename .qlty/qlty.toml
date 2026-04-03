@@ -84,10 +84,9 @@ name = "osv-scanner"
 
 [[plugin]]
 name = "php-codesniffer"
-version = "3.13.5"
+version = "4.0.1"
 mode = "comment"
-package_file = "composer.json"
-package_filters = ["slevomat", "dealerdirect"]
+package_file = ".qlty/configs/phpcs-composer.json"
 
 [[plugin]]
 name = "php-cs-fixer"
