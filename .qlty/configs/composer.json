@@ -1,13 +1,12 @@
 {
     "require": {
         "phpstan/extension-installer": "*",
-        "illuminate/support": "^12.0",
-        "larastan/larastan": "^3.9",
         "phpstan/phpdoc-parser": "^2.3",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
+        "larastan/larastan": "^3.9",
         "titasgailius/larastan-extended": "^0.0.2"
     },
     "config": {
