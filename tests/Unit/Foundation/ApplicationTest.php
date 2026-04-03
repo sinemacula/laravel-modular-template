@@ -256,7 +256,7 @@ class ApplicationTest extends TestCase
      * Extract the Application instance from an ApplicationBuilder
      * using reflection.
      *
-     * @param  ApplicationBuilder  $builder
+     * @param  \App\Foundation\Configuration\ApplicationBuilder  $builder
      * @return \App\Foundation\Application
      */
     private function extractAppFromBuilder(

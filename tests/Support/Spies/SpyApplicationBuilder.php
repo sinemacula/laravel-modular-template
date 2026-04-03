@@ -45,6 +45,7 @@ class SpyApplicationBuilder extends ApplicationBuilder
     /**
      * @inheritDoc
      *
+     * @param  bool|iterable<string>  $discover
      * @return static
      */
     public function withEvents(
@@ -74,6 +75,7 @@ class SpyApplicationBuilder extends ApplicationBuilder
      * @inheritDoc
      *
      * @param  array<int, string>  $providers
+     * @param  bool  $withBootstrapProviders
      * @return static
      */
     public function withProviders(
