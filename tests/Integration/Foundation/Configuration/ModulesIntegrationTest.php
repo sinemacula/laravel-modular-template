@@ -11,8 +11,8 @@ use Tests\TestCase;
 /**
  * Integration tests for the Modules configuration class.
  *
- * Exercises module discovery, caching, and path resolution
- * against a real filesystem with temporary module directories.
+ * Exercises module discovery, caching, and path resolution against a real
+ * filesystem with temporary module directories.
  *
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
@@ -206,9 +206,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath falls back to the default module when no
-     * namespace is present, returning empty when the default module does not
-     * exist.
+     * Test that resourcePath falls back to the default module when no namespace
+     * is present, returning empty when the default module does not exist.
      *
      * @return void
      */
@@ -255,8 +254,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that langPaths returns only modules with an existing lang
-     * directory.
+     * Test that langPaths returns only modules with an existing lang directory.
      *
      * @return void
      */

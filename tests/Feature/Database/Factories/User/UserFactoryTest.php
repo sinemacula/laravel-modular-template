@@ -48,9 +48,9 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->create();
 
-        static::assertNotNull($user->name); // @phpstan-ignore property.notFound
-        static::assertNotNull($user->email); // @phpstan-ignore property.notFound
-        static::assertNotNull($user->password); // @phpstan-ignore property.notFound
+        static::assertNotNull($user->name);
+        static::assertNotNull($user->email);
+        static::assertNotNull($user->password);
     }
 
     /**
@@ -65,8 +65,8 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $userB */
         $userB = User::factory()->create();
 
-        static::assertIsString($userA->name); // @phpstan-ignore property.notFound
-        static::assertIsString($userB->name); // @phpstan-ignore property.notFound
+        static::assertIsString($userA->name);
+        static::assertIsString($userB->name);
         static::assertNotEmpty($userA->name);
         static::assertNotEmpty($userB->name);
     }
@@ -83,7 +83,7 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $userB */
         $userB = User::factory()->create();
 
-        static::assertNotSame($userA->email, $userB->email); // @phpstan-ignore property.notFound
+        static::assertNotSame($userA->email, $userB->email);
     }
 
     /**
@@ -96,8 +96,8 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->create();
 
-        static::assertNotSame('password', $user->password); // @phpstan-ignore property.notFound
-        static::assertStringStartsWith('$2y$', $user->password); // @phpstan-ignore property.notFound
+        static::assertNotSame('password', $user->password);
+        static::assertStringStartsWith('$2y$', $user->password);
     }
 
     /**
@@ -113,7 +113,7 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $userB */
         $userB = User::factory()->create();
 
-        static::assertSame($userA->password, $userB->password); // @phpstan-ignore property.notFound
+        static::assertSame($userA->password, $userB->password);
     }
 
     /**
@@ -126,7 +126,7 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->verified()->create();
 
-        static::assertNotNull($user->email_verified_at); // @phpstan-ignore property.notFound
+        static::assertNotNull($user->email_verified_at);
     }
 
     /**
@@ -142,7 +142,7 @@ class UserFactoryTest extends TestCase
         $user = User::factory()->verified()->create();
 
         static::assertTrue(
-            Carbon::parse($user->email_verified_at) // @phpstan-ignore property.notFound
+            Carbon::parse($user->email_verified_at)
                 ->between($now->copy()->subMinute(), $now),
         );
 
@@ -159,11 +159,12 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->remembered()->create();
 
-        static::assertNotNull($user->remember_token); // @phpstan-ignore property.notFound
+        static::assertNotNull($user->remember_token);
     }
 
     /**
-     * Test that the remembered state generates a token of exactly 10 characters.
+     * Test that the remembered state generates a token of exactly 10
+     * characters.
      *
      * @return void
      */
@@ -172,7 +173,7 @@ class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->remembered()->create();
 
-        static::assertSame(10, strlen($user->remember_token)); // @phpstan-ignore property.notFound
+        static::assertSame(10, strlen($user->remember_token));
     }
 
     /**

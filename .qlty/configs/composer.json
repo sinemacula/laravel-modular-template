@@ -6,6 +6,8 @@
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
+        "larastan/larastan": "^3.9",
+        "titasgailius/larastan-extended": "^0.0.2",
         "slevomat/coding-standard": "^8.28",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.2"
     },

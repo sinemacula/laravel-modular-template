@@ -44,12 +44,12 @@ class ModuleServiceProviderFeatureTest extends TestCase
     {
         static::assertArrayHasKey(
             'modules',
-            ServiceProvider::$optimizeCommands, // @phpstan-ignore staticProperty.notFound
+            ServiceProvider::$optimizeCommands,
         );
 
         static::assertSame(
             'module:cache',
-            ServiceProvider::$optimizeCommands['modules'], // @phpstan-ignore staticProperty.notFound
+            ServiceProvider::$optimizeCommands['modules'],
         );
     }
 }

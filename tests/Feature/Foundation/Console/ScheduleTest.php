@@ -68,7 +68,8 @@ class ScheduleTest extends TestCase
     }
 
     /**
-     * Test that the model:prune command is configured to run on one server only.
+     * Test that the model:prune command is configured to run on one server
+     * only.
      *
      * @return void
      */

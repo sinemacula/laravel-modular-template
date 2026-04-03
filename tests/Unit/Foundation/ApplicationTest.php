@@ -251,8 +251,8 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Extract the Application instance from an ApplicationBuilder
-     * using reflection.
+     * Extract the Application instance from an ApplicationBuilder using
+     * reflection.
      *
      * @param  \App\Foundation\Configuration\ApplicationBuilder  $builder
      * @return \App\Foundation\Application

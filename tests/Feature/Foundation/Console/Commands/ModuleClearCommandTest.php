@@ -20,7 +20,7 @@ use Tests\TestCase;
 class ModuleClearCommandTest extends TestCase
 {
     /** @var string The path to the module cache file. */
-    private string $cachePath;
+    private string $cachePath = '';
 
     /**
      * Set up the test environment.

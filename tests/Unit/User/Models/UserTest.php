@@ -26,8 +26,7 @@ use PHPUnit\Framework\TestCase;
 class UserTest extends TestCase
 {
     /**
-     * Test that the Fillable attribute contains the expected
-     * fields.
+     * Test that the Fillable attribute contains the expected fields.
      *
      * @return void
      */
@@ -47,8 +46,7 @@ class UserTest extends TestCase
     }
 
     /**
-     * Test that the Hidden attribute contains the expected
-     * fields.
+     * Test that the Hidden attribute contains the expected fields.
      *
      * @return void
      */
@@ -106,8 +104,7 @@ class UserTest extends TestCase
     }
 
     /**
-     * Test that the UseFactory attribute references the correct
-     * factory class.
+     * Test that the UseFactory attribute references the correct factory class.
      *
      * @return void
      */

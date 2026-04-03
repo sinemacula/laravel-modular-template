@@ -235,8 +235,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that clearCache flushes the in-memory state so that subsequent
-     * calls re-discover modules from the filesystem.
+     * Test that clearCache flushes the in-memory state so that subsequent calls
+     * re-discover modules from the filesystem.
      *
      * @return void
      */
@@ -371,8 +371,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath uses the DEFAULT_MODULE constant when no
-     * namespace is provided.
+     * Test that resourcePath uses the DEFAULT_MODULE constant when no namespace
+     * is provided.
      *
      * @return void
      */
@@ -573,8 +573,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resolveModules prefers the cache file over filesystem
-     * discovery when a cache file exists.
+     * Test that resolveModules prefers the cache file over filesystem discovery
+     * when a cache file exists.
      *
      * @return void
      */
@@ -616,8 +616,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resolveModules falls back to filesystem discovery when no
-     * cache file exists.
+     * Test that resolveModules falls back to filesystem discovery when no cache
+     * file exists.
      *
      * @return void
      */

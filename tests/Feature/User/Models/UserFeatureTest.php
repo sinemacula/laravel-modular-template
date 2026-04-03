@@ -34,7 +34,7 @@ class UserFeatureTest extends TestCase
         $user = User::factory()->create();
 
         $this->assertDatabaseHas('users', [
-            'id' => $user->id, // @phpstan-ignore property.notFound
+            'id' => $user->id,
         ]);
     }
 
@@ -50,7 +50,7 @@ class UserFeatureTest extends TestCase
             'password' => 'secret',
         ]);
 
-        static::assertNotSame('secret', $user->password); // @phpstan-ignore property.notFound
+        static::assertNotSame('secret', $user->password);
     }
 
     /**
@@ -92,9 +92,9 @@ class UserFeatureTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->verified()->create();
 
-        static::assertInstanceOf(
+        static::assertInstanceOf( // @phpstan-ignore staticMethod.impossibleType
             Carbon::class,
-            $user->email_verified_at, // @phpstan-ignore property.notFound
+            $user->email_verified_at,
         );
     }
 
@@ -112,6 +112,6 @@ class UserFeatureTest extends TestCase
             'email_verified_at' => now(),
         ]);
 
-        static::assertNull($user->email_verified_at); // @phpstan-ignore property.notFound
+        static::assertNull($user->email_verified_at);
     }
 }

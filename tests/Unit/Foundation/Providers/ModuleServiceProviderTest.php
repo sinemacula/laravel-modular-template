@@ -246,8 +246,8 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that multiple module translation paths are each
-     * registered via loadTranslationsFrom.
+     * Test that multiple module translation paths are each registered via
+     * loadTranslationsFrom.
      *
      * @return void
      */
@@ -276,8 +276,7 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Create a spy provider that tracks calls to protected
-     * methods.
+     * Create a spy provider that tracks calls to protected methods.
      *
      * @return \Tests\Support\Spies\SpyModuleServiceProvider
      */

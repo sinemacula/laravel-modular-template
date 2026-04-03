@@ -5,8 +5,8 @@ namespace Tests\Support\Concerns;
 use App\Foundation\Configuration\Modules;
 
 /**
- * Provides helpers for resetting and configuring the Modules static state
- * in tests.
+ * Provides helpers for resetting and configuring the Modules static state in
+ * tests.
  *
  * The Modules class uses static properties for caching. These must be reset
  * between tests to prevent leakage. This trait centralises that logic.

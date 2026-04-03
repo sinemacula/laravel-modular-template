@@ -5,8 +5,8 @@ namespace Tests\Support\Spies;
 use App\Foundation\Providers\ModuleServiceProvider;
 
 /**
- * Spy subclass that records calls to protected ServiceProvider methods
- * rather than invoking the real implementations.
+ * Spy subclass that records calls to protected ServiceProvider methods rather
+ * than invoking the real implementations.
  *
  * @internal
  *

@@ -52,8 +52,8 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * Test that module_path() without an argument returns the
-     * modules path without a trailing separator.
+     * Test that module_path() without an argument returns the modules path
+     * without a trailing separator.
      *
      * @return void
      */
@@ -68,8 +68,8 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * Test that module_path() appends the given path with a
-     * directory separator.
+     * Test that module_path() appends the given path with a directory
+     * separator.
      *
      * @return void
      */
@@ -85,8 +85,8 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * Test that module_path() with an empty string behaves
-     * identically to calling it with no argument.
+     * Test that module_path() with an empty string behaves identically to
+     * calling it with no argument.
      *
      * @return void
      */
@@ -101,8 +101,8 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * Test that module_path() delegates to
-     * Modules::modulesPath() for the base path segment.
+     * Test that module_path() delegates to Modules::modulesPath() for the base
+     * path segment.
      *
      * @return void
      */
@@ -116,8 +116,8 @@ class HelpersTest extends TestCase
     }
 
     /**
-     * Test that the helpers file is loaded during autoload,
-     * covering the function_exists guard.
+     * Test that the helpers file is loaded during autoload, covering the
+     * function_exists guard.
      *
      * @return void
      */

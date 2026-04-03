@@ -16,7 +16,7 @@ namespace Tests\Support\Concerns;
 trait ManagesTemporaryFiles
 {
     /** @var string The temporary directory for this test. */
-    protected string $tempDir; // @phpstan-ignore property.uninitialized
+    protected string $tempDir = '';
 
     /**
      * Create a temporary directory with the given prefix.
@@ -136,7 +136,7 @@ trait ManagesTemporaryFiles
      */
     protected function removeTempDirectory(): void
     {
-        if (isset($this->tempDir)) {
+        if ($this->tempDir !== '') {
             $this->removeDirectory($this->tempDir);
         }
     }
