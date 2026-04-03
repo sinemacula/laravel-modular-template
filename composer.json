@@ -78,7 +78,6 @@
             "qlty fmt"
         ],
         "test": [
-            "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
         "post-autoload-dump": [
