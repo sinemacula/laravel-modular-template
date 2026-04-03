@@ -39,8 +39,7 @@ class UserFeatureTest extends TestCase
     }
 
     /**
-     * Test that the password is hashed on creation and not
-     * stored as plaintext.
+     * Test that the password is hashed on creation and not stored as plaintext.
      *
      * @return void
      */
@@ -55,8 +54,7 @@ class UserFeatureTest extends TestCase
     }
 
     /**
-     * Test that the password is hidden from the array
-     * representation.
+     * Test that the password is hidden from the array representation.
      *
      * @return void
      */
@@ -69,8 +67,7 @@ class UserFeatureTest extends TestCase
     }
 
     /**
-     * Test that the remember token is hidden from the
-     * array representation.
+     * Test that the remember token is hidden from the array representation.
      *
      * @return void
      */
@@ -86,8 +83,7 @@ class UserFeatureTest extends TestCase
     }
 
     /**
-     * Test that the email_verified_at attribute is cast to
-     * a Carbon instance.
+     * Test that the email_verified_at attribute is cast to a Carbon instance.
      *
      * @return void
      */
@@ -103,8 +99,7 @@ class UserFeatureTest extends TestCase
     }
 
     /**
-     * Test that mass assignment protection prevents
-     * setting guarded attributes.
+     * Test that mass assignment protection prevents setting guarded attributes.
      *
      * @return void
      */

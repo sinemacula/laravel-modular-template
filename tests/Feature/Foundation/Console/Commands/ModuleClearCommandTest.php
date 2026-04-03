@@ -51,8 +51,7 @@ class ModuleClearCommandTest extends TestCase
     }
 
     /**
-     * Test that the module:clear command exits with a
-     * success code.
+     * Test that the module:clear command exits with a success code.
      *
      * @return void
      */
@@ -75,8 +74,7 @@ class ModuleClearCommandTest extends TestCase
     }
 
     /**
-     * Test that the cache file is removed from disk after
-     * running the command.
+     * Test that the cache file is removed from disk after running the command.
      *
      * @return void
      */
@@ -90,8 +88,7 @@ class ModuleClearCommandTest extends TestCase
     }
 
     /**
-     * Test that the command succeeds even when no cache
-     * file exists.
+     * Test that the command succeeds even when no cache file exists.
      *
      * @return void
      */

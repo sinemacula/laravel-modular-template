@@ -26,8 +26,7 @@ class UserFactoryTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * Reset the cached password between tests to ensure
-     * isolation.
+     * Reset the cached password between tests to ensure isolation.
      *
      * @return void
      */
@@ -40,8 +39,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the definition returns a user with the
-     * expected keys.
+     * Test that the definition returns a user with the expected keys.
      *
      * @return void
      */
@@ -56,8 +54,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the definition generates a name that is a
-     * non-empty string.
+     * Test that the definition generates a name that is a non-empty string.
      *
      * @return void
      */
@@ -75,8 +72,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the definition generates unique email
-     * addresses for each user.
+     * Test that the definition generates unique email addresses for each user.
      *
      * @return void
      */
@@ -91,8 +87,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the password is hashed and not stored as
-     * plaintext.
+     * Test that the password is hashed and not stored as plaintext.
      *
      * @return void
      */
@@ -106,8 +101,8 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the static password cache ensures both users
-     * receive the same hashed password.
+     * Test that the static password cache ensures both users receive the same
+     * hashed password.
      *
      * @return void
      */
@@ -122,8 +117,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the verified state sets the
-     * email_verified_at timestamp.
+     * Test that the verified state sets the email_verified_at timestamp.
      *
      * @return void
      */
@@ -136,8 +130,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the verified state sets a timestamp within
-     * the last minute.
+     * Test that the verified state sets a timestamp within the last minute.
      *
      * @return void
      */
@@ -157,8 +150,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the remembered state sets the remember
-     * token.
+     * Test that the remembered state sets the remember token.
      *
      * @return void
      */
@@ -171,8 +163,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the remembered state generates a token of
-     * exactly 10 characters.
+     * Test that the remembered state generates a token of exactly 10 characters.
      *
      * @return void
      */

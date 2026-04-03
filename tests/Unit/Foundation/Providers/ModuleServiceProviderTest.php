@@ -107,8 +107,8 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that boot registers optimization commands with the
-     * correct arguments.
+     * Test that boot registers optimization commands with the correct
+     * arguments.
      *
      * @return void
      */
@@ -130,8 +130,8 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that loadViewsFrom receives arguments in the correct
-     * order: path first, module name second.
+     * Test that loadViewsFrom receives arguments in the correct order: path
+     * first, module name second.
      *
      * @return void
      */
@@ -154,8 +154,8 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that loadTranslationsFrom receives arguments in the
-     * correct order: path first, module name second.
+     * Test that loadTranslationsFrom receives arguments in the correct order:
+     * path first, module name second.
      *
      * @return void
      */
@@ -178,8 +178,8 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that no calls to loadViewsFrom are made when
-     * Modules::viewPaths() returns an empty array.
+     * Test that no calls to loadViewsFrom are made when Modules::viewPaths()
+     * returns an empty array.
      *
      * @return void
      */
@@ -216,8 +216,8 @@ class ModuleServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that multiple module view paths are each registered
-     * via loadViewsFrom.
+     * Test that multiple module view paths are each registered via
+     * loadViewsFrom.
      *
      * @return void
      */

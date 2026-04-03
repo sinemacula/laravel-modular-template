@@ -3,12 +3,12 @@
 namespace Tests\Support\Concerns;
 
 /**
- * Provides temporary directory management for tests that need
- * filesystem isolation.
+ * Provides temporary directory management for tests that need filesystem
+ * isolation.
  *
- * Creates a unique temporary directory on setUp and recursively
- * removes it on tearDown. Also provides helpers for creating
- * nested directory structures and module layouts.
+ * Creates a unique temporary directory on setUp and recursively removes it
+ * on tearDown. Also provides helpers for creating nested directory structures
+ * and module layouts.
  *
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
@@ -72,11 +72,10 @@ trait ManagesTemporaryFiles
     }
 
     /**
-     * Create module directory structures under the temp modules
-     * directory.
+     * Create module directory structures under the temp modules directory.
      *
-     * Each key in the array is a module name, and each value is
-     * a list of subdirectory paths to create within that module.
+     * Each key in the array is a module name, and each value is a list of
+     * subdirectory paths to create within that module.
      *
      * @param  array<string, list<string>>  $modules
      * @return void

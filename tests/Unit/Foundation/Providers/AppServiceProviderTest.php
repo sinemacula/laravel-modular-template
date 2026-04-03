@@ -52,8 +52,8 @@ class AppServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that parallel testing is registered when the
-     * application is in the testing environment.
+     * Test that parallel testing is registered when the application is in the
+     * testing environment.
      *
      * @return void
      */
@@ -74,8 +74,8 @@ class AppServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that parallel testing registration is skipped when
-     * the application is not in the testing environment.
+     * Test that parallel testing registration is skipped when the application
+     * is not in the testing environment.
      *
      * @return void
      */
@@ -134,8 +134,7 @@ class AppServiceProviderTest extends TestCase
     }
 
     /**
-     * Create a mock Application that returns the given
-     * environment.
+     * Create a mock Application that returns the given environment.
      *
      * @param  string  $environment
      * @return \Illuminate\Contracts\Foundation\Application&\Mockery\MockInterface
@@ -157,8 +156,7 @@ class AppServiceProviderTest extends TestCase
     }
 
     /**
-     * Set up the Facade root application with a minimal
-     * container mock.
+     * Set up the Facade root application with a minimal container mock.
      *
      * @return void
      */

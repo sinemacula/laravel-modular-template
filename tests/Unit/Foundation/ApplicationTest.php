@@ -82,8 +82,7 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Test that configure with null infers the base path
-     * without throwing.
+     * Test that configure with null infers the base path without throwing.
      *
      * @return void
      */
@@ -97,8 +96,8 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath returns the module path when Modules
-     * resolves a non-empty resource path.
+     * Test that resourcePath returns the module path when Modules resolves a
+     * non-empty resource path.
      *
      * @return void
      */
@@ -116,8 +115,8 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath falls back to the parent
-     * implementation when Modules returns an empty string.
+     * Test that resourcePath falls back to the parent implementation when
+     * Modules returns an empty string.
      *
      * @return void
      */
@@ -147,8 +146,8 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath appends the subpath to the module
-     * resources directory.
+     * Test that resourcePath appends the subpath to the module resources
+     * directory.
      *
      * @return void
      */
@@ -169,9 +168,8 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath strips the module:: prefix before
-     * joining the path, so the namespace does not leak into the
-     * filesystem path.
+     * Test that resourcePath strips the module:: prefix before joining the
+     * path, so the namespace does not leak into the filesystem path.
      *
      * @return void
      */
@@ -229,8 +227,8 @@ class ApplicationTest extends TestCase
     }
 
     /**
-     * Test that path() uses appPath when it has been explicitly
-     * set, instead of falling back to basePath/modules.
+     * Test that path() uses appPath when it has been explicitly set, instead
+     * of falling back to basePath/modules.
      *
      * @return void
      */

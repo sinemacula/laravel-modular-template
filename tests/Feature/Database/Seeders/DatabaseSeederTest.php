@@ -49,8 +49,7 @@ class DatabaseSeederTest extends TestCase
     }
 
     /**
-     * Test that the seeded user has the correct email
-     * address.
+     * Test that the seeded user has the correct email address.
      *
      * @return void
      */
@@ -64,8 +63,7 @@ class DatabaseSeederTest extends TestCase
     }
 
     /**
-     * Test that the seeded user has a verified email
-     * address.
+     * Test that the seeded user has a verified email address.
      *
      * @return void
      */

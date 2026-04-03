@@ -85,8 +85,8 @@ class Modules
     /**
      * Get the path to a module's resources directory.
      *
-     * A module can be specified using the {module}::{path} format.
-     * When no module prefix is present, the default module is used.
+     * A module can be specified using the {module}::{path} format. When no
+     * module prefix is present, the default module is used.
      *
      * @param  string  $path
      * @return string
@@ -194,8 +194,8 @@ class Modules
     /**
      * Extract the module name from the given path.
      *
-     * Parses the {module}::{path} format and returns the module
-     * segment, or null if no separator is present.
+     * Parses the {module}::{path} format and returns the module segment, or
+     * null if no separator is present.
      *
      * @param  string  $path
      * @return string|null

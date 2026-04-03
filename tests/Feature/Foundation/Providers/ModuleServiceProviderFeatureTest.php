@@ -21,8 +21,7 @@ use Tests\TestCase;
 class ModuleServiceProviderFeatureTest extends TestCase
 {
     /**
-     * Test that the module:cache and module:clear commands
-     * are registered.
+     * Test that the module:cache and module:clear commands are registered.
      *
      * @return void
      */
@@ -36,8 +35,8 @@ class ModuleServiceProviderFeatureTest extends TestCase
     }
 
     /**
-     * Test that the module:cache command is included in the
-     * optimize command list.
+     * Test that the module:cache command is included in the optimize command
+     * list.
      *
      * @return void
      */

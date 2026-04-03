@@ -30,8 +30,8 @@ class ModulesIntegrationTest extends TestCase
     use ManagesTemporaryFiles;
 
     /**
-     * Set up the temporary directory structure and reset
-     * Modules static state before each test.
+     * Set up the temporary directory structure and reset Modules static state
+     * before each test.
      *
      * @return void
      */
@@ -45,8 +45,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Clean up the temporary directory and reset Modules
-     * static state after each test.
+     * Clean up the temporary directory and reset Modules static state after
+     * each test.
      *
      * @return void
      */
@@ -59,8 +59,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that all three modules are discovered from the
-     * filesystem.
+     * Test that all three modules are discovered from the filesystem.
      *
      * @return void
      */
@@ -97,8 +96,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that discovered module names are lowercased even
-     * when the directory name has mixed case.
+     * Test that discovered module names are lowercased even when the directory
+     * name has mixed case.
      *
      * @return void
      */
@@ -129,8 +128,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that caching and restoring produces identical
-     * route path results.
+     * Test that caching and restoring produces identical route path results.
      *
      * @return void
      */
@@ -150,8 +148,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that the cache file contains valid PHP that
-     * returns an array.
+     * Test that the cache file contains valid PHP that returns an array.
      *
      * @return void
      */
@@ -174,8 +171,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that clearing the cache still allows modules to
-     * be rediscovered.
+     * Test that clearing the cache still allows modules to be rediscovered.
      *
      * @return void
      */
@@ -193,8 +189,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath resolves a namespaced module
-     * path to the correct Resources directory.
+     * Test that resourcePath resolves a namespaced module path to the correct
+     * Resources directory.
      *
      * @return void
      */
@@ -210,9 +206,9 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that resourcePath falls back to the default module
-     * when no namespace is present, returning empty when the
-     * default module does not exist.
+     * Test that resourcePath falls back to the default module when no
+     * namespace is present, returning empty when the default module does not
+     * exist.
      *
      * @return void
      */
@@ -224,8 +220,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that routePaths returns only modules with an
-     * existing routes file.
+     * Test that routePaths returns only modules with an existing routes file.
      *
      * @return void
      */
@@ -242,8 +237,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that viewPaths returns only modules with an
-     * existing views directory.
+     * Test that viewPaths returns only modules with an existing views
+     * directory.
      *
      * @return void
      */
@@ -260,8 +255,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that langPaths returns only modules with an
-     * existing lang directory.
+     * Test that langPaths returns only modules with an existing lang
+     * directory.
      *
      * @return void
      */
@@ -278,8 +273,7 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that a pre-existing cache prevents fresh
-     * filesystem discovery.
+     * Test that a pre-existing cache prevents fresh filesystem discovery.
      *
      * @return void
      */
@@ -310,8 +304,8 @@ class ModulesIntegrationTest extends TestCase
     }
 
     /**
-     * Test that clearing the cache allows all modules to be
-     * rediscovered from the filesystem.
+     * Test that clearing the cache allows all modules to be rediscovered from
+     * the filesystem.
      *
      * @return void
      */

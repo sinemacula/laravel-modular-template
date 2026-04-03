@@ -31,11 +31,10 @@ final class Application extends BaseApplication
     /**
      * Get the path to the resources directory.
      *
-     * Supports module-scoped paths using the {module}::{path}
-     * format. When a module prefix is present, the path resolves
-     * to that module's Resources directory. Otherwise, the
-     * default module is used, falling back to the standard
-     * Laravel resources directory.
+     * Supports module-scoped paths using the {module}::{path} format. When
+     * a module prefix is present, the path resolves to that module's
+     * Resources directory. Otherwise, the default module is used, falling
+     * back to the standard Laravel resources directory.
      *
      * phpcs:disable Squiz.Commenting.FunctionComment.ScalarTypeHintMissing
      *
@@ -74,8 +73,8 @@ final class Application extends BaseApplication
     /**
      * Strip the module prefix from a path.
      *
-     * Removes the {module}:: segment if present, returning only
-     * the path portion.
+     * Removes the {module}:: segment if present, returning only the path
+     * portion.
      *
      * @param  string  $path
      * @return string

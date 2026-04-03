@@ -30,8 +30,8 @@ class ApplicationBuilderTest extends TestCase
     /**
      * Set up the test environment.
      *
-     * Creates a temporary directory structure and configures the
-     * Modules class to use it.
+     * Creates a temporary directory structure and configures the Modules class
+     * to use it.
      *
      * @return void
      */
@@ -69,8 +69,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules returns the same builder instance
-     * for fluent chaining.
+     * Test that withModules returns the same builder instance for fluent
+     * chaining.
      *
      * @return void
      */
@@ -85,8 +85,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules discovers Listeners directories
-     * within modules and passes them to withEvents.
+     * Test that withModules discovers Listeners directories within modules
+     * and passes them to withEvents.
      *
      * @return void
      */
@@ -109,8 +109,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules discovers schedule.php files within
-     * modules and passes them to withCommands.
+     * Test that withModules discovers schedule.php files within modules and
+     * passes them to withCommands.
      *
      * @return void
      */
@@ -139,8 +139,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules discovers Commands directories
-     * within modules and passes them to withCommands.
+     * Test that withModules discovers Commands directories within modules and
+     * passes them to withCommands.
      *
      * @return void
      */
@@ -166,8 +166,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules calls withKernels as part of the
-     * registration chain.
+     * Test that withModules calls withKernels as part of the registration
+     * chain.
      *
      * @return void
      */
@@ -182,8 +182,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules calls withProviders as part of the
-     * registration chain.
+     * Test that withModules calls withProviders as part of the registration
+     * chain.
      *
      * @return void
      */
@@ -198,8 +198,7 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules handles an empty modules directory
-     * without errors.
+     * Test that withModules handles an empty modules directory without errors.
      *
      * @return void
      */
@@ -216,8 +215,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Test that withModules merges both schedule files and
-     * command directories into a single array for withCommands.
+     * Test that withModules merges both schedule files and command directories
+     * into a single array for withCommands.
      *
      * @return void
      */
@@ -256,8 +255,8 @@ class ApplicationBuilderTest extends TestCase
     }
 
     /**
-     * Create a spy builder that captures the arguments passed to
-     * withEvents and withCommands.
+     * Create a spy builder that captures the arguments passed to withEvents
+     * and withCommands.
      *
      * @param  \Illuminate\Foundation\Application  $app
      * @return \Tests\Support\Spies\SpyApplicationBuilder

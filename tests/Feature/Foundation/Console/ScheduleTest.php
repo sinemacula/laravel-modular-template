@@ -38,8 +38,7 @@ class ScheduleTest extends TestCase
     }
 
     /**
-     * Test that the schedule file registers commands when
-     * directly included.
+     * Test that the schedule file registers commands when directly included.
      *
      * @return void
      */
@@ -57,8 +56,7 @@ class ScheduleTest extends TestCase
     }
 
     /**
-     * Test that the model:prune command runs on a daily
-     * schedule.
+     * Test that the model:prune command runs on a daily schedule.
      *
      * @return void
      */
@@ -70,8 +68,7 @@ class ScheduleTest extends TestCase
     }
 
     /**
-     * Test that the model:prune command is configured to
-     * run on one server only.
+     * Test that the model:prune command is configured to run on one server only.
      *
      * @return void
      */

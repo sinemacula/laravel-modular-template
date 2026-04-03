@@ -53,8 +53,7 @@ class ModuleCacheCommandTest extends TestCase
     }
 
     /**
-     * Test that the module:cache command exits with a
-     * success code.
+     * Test that the module:cache command exits with a success code.
      *
      * @return void
      */
@@ -76,8 +75,7 @@ class ModuleCacheCommandTest extends TestCase
     }
 
     /**
-     * Test that the cache file is created on disk after
-     * running the command.
+     * Test that the cache file is created on disk after running the command.
      *
      * @return void
      */
@@ -89,8 +87,7 @@ class ModuleCacheCommandTest extends TestCase
     }
 
     /**
-     * Test that the cache file contains the discovered
-     * modules.
+     * Test that the cache file contains the discovered modules.
      *
      * @return void
      */

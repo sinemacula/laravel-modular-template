@@ -18,8 +18,7 @@ use Tests\TestCase;
 class ApplicationFeatureTest extends TestCase
 {
     /**
-     * Test that the application boots with the modular
-     * architecture.
+     * Test that the application boots with the modular architecture.
      *
      * @return void
      */
@@ -40,8 +39,7 @@ class ApplicationFeatureTest extends TestCase
     }
 
     /**
-     * Test that the application path returns the modules
-     * directory.
+     * Test that the application path returns the modules directory.
      *
      * @return void
      */
@@ -54,8 +52,7 @@ class ApplicationFeatureTest extends TestCase
     }
 
     /**
-     * Test that the application path appends a subpath
-     * correctly.
+     * Test that the application path appends a subpath correctly.
      *
      * @return void
      */
@@ -69,9 +66,8 @@ class ApplicationFeatureTest extends TestCase
     }
 
     /**
-     * Test that resourcePath falls back to the standard Laravel
-     * resources directory when the default module has no
-     * Resources directory.
+     * Test that resourcePath falls back to the standard Laravel resources
+     * directory when the default module has no Resources directory.
      *
      * @return void
      */
@@ -84,8 +80,8 @@ class ApplicationFeatureTest extends TestCase
     }
 
     /**
-     * Test that resourcePath strips the module:: prefix and
-     * does not leak it into the filesystem path.
+     * Test that resourcePath strips the module:: prefix and does not leak it
+     * into the filesystem path.
      *
      * @return void
      */

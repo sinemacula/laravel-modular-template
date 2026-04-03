@@ -5,11 +5,10 @@ namespace Tests\Support\Spies;
 use App\Foundation\Configuration\ApplicationBuilder;
 
 /**
- * Spy subclass that captures arguments passed to the builder
- * chain methods without invoking real Laravel service
- * registration.
+ * Spy subclass that captures arguments passed to the builder chain methods
+ * without invoking real Laravel service registration.
  *
- * @internal used by ApplicationBuilderTest
+ * @internal
  *
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited

@@ -31,8 +31,8 @@ class ModulesTest extends TestCase
     /**
      * Set up the test environment.
      *
-     * Creates a temporary directory structure that mirrors a real
-     * modular application layout.
+     * Creates a temporary directory structure that mirrors a real modular
+     * application layout.
      *
      * @return void
      */
@@ -48,8 +48,8 @@ class ModulesTest extends TestCase
     /**
      * Tear down the test environment.
      *
-     * Removes the temporary directory and resets all static state
-     * on the Modules class.
+     * Removes the temporary directory and resets all static state on the
+     * Modules class.
      *
      * @return void
      */
@@ -62,8 +62,7 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that setBasePath stores the value used by
-     * modulesPath.
+     * Test that setBasePath stores the value used by modulesPath.
      *
      * @return void
      */
@@ -78,8 +77,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that modulesPath returns the base path joined with
-     * the modules directory using DIRECTORY_SEPARATOR.
+     * Test that modulesPath returns the base path joined with the modules
+     * directory using DIRECTORY_SEPARATOR.
      *
      * @return void
      */
@@ -94,8 +93,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that modulesPath throws a RuntimeException when
-     * the base path has not been set.
+     * Test that modulesPath throws a RuntimeException when the base path has
+     * not been set.
      *
      * @return void
      */
@@ -109,8 +108,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that cache writes a valid PHP file that returns an
-     * array of discovered modules.
+     * Test that cache writes a valid PHP file that returns an array of
+     * discovered modules.
      *
      * @return void
      */
@@ -135,8 +134,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that cache throws a RuntimeException when the cache
-     * file cannot be written.
+     * Test that cache throws a RuntimeException when the cache file cannot be
+     * written.
      *
      * @return void
      */
@@ -187,8 +186,7 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that cache flushes internal state before performing
-     * fresh discovery.
+     * Test that cache flushes internal state before performing fresh discovery.
      *
      * @return void
      */
@@ -237,8 +235,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that clearCache flushes the in-memory state so that
-     * subsequent calls re-discover modules from the filesystem.
+     * Test that clearCache flushes the in-memory state so that subsequent
+     * calls re-discover modules from the filesystem.
      *
      * @return void
      */
@@ -268,8 +266,7 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that clearCache succeeds without error when no cache
-     * file exists.
+     * Test that clearCache succeeds without error when no cache file exists.
      *
      * @return void
      */
@@ -291,8 +288,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath resolves the correct Resources
-     * directory when a module namespace is provided.
+     * Test that resourcePath resolves the correct Resources directory when a
+     * module namespace is provided.
      *
      * @return void
      */
@@ -313,8 +310,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath uses the default module when no
-     * namespace separator is present.
+     * Test that resourcePath uses the default module when no namespace
+     * separator is present.
      *
      * @return void
      */
@@ -330,8 +327,7 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath returns an empty string for an
-     * unknown module.
+     * Test that resourcePath returns an empty string for an unknown module.
      *
      * @return void
      */
@@ -345,8 +341,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath uses the default module when the
-     * module name before :: is empty.
+     * Test that resourcePath uses the default module when the module name
+     * before :: is empty.
      *
      * @return void
      */
@@ -360,8 +356,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that a single colon does not act as the module
-     * namespace separator — only double colon does.
+     * Test that a single colon does not act as the module namespace separator
+     * — only double colon does.
      *
      * @return void
      */
@@ -375,8 +371,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath uses the DEFAULT_MODULE constant
-     * when no namespace is provided.
+     * Test that resourcePath uses the DEFAULT_MODULE constant when no
+     * namespace is provided.
      *
      * @return void
      */
@@ -400,8 +396,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resourcePath with no arguments returns the
-     * default module's Resources directory.
+     * Test that resourcePath with no arguments returns the default module's
+     * Resources directory.
      *
      * @return void
      */
@@ -425,8 +421,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that routePaths only returns paths for modules
-     * that have a routes.php file.
+     * Test that routePaths only returns paths for modules that have a
+     * routes.php file.
      *
      * @return void
      */
@@ -442,8 +438,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that viewPaths only returns paths for modules that
-     * have a views directory.
+     * Test that viewPaths only returns paths for modules that have a views
+     * directory.
      *
      * @return void
      */
@@ -459,8 +455,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that langPaths only returns paths for modules that
-     * have a lang directory.
+     * Test that langPaths only returns paths for modules that have a lang
+     * directory.
      *
      * @return void
      */
@@ -476,8 +472,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resolved paths are cached after the first call
-     * and subsequent calls return the same result.
+     * Test that resolved paths are cached after the first call and subsequent
+     * calls return the same result.
      *
      * @return void
      */
@@ -492,8 +488,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resolvePaths filters out modules whose target
-     * path does not exist on disk.
+     * Test that resolvePaths filters out modules whose target path does not
+     * exist on disk.
      *
      * @return void
      */
@@ -509,8 +505,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that discoverModules only finds directories, not
-     * regular files placed in the modules directory.
+     * Test that discoverModules only finds directories, not regular files
+     * placed in the modules directory.
      *
      * @return void
      */
@@ -533,8 +529,7 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that discoverModules skips dot entries such as
-     * .hidden directories.
+     * Test that discoverModules skips dot entries such as .hidden directories.
      *
      * @return void
      */
@@ -549,8 +544,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that discoverModules lowercases directory names
-     * when using them as module keys.
+     * Test that discoverModules lowercases directory names when using them as
+     * module keys.
      *
      * @return void
      */
@@ -578,8 +573,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resolveModules prefers the cache file over
-     * filesystem discovery when a cache file exists.
+     * Test that resolveModules prefers the cache file over filesystem
+     * discovery when a cache file exists.
      *
      * @return void
      */
@@ -621,8 +616,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that resolveModules falls back to filesystem
-     * discovery when no cache file exists.
+     * Test that resolveModules falls back to filesystem discovery when no
+     * cache file exists.
      *
      * @return void
      */
@@ -643,8 +638,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that getModules lazy loads the module list and
-     * returns consistent results across multiple method calls.
+     * Test that getModules lazy loads the module list and returns consistent
+     * results across multiple method calls.
      *
      * @return void
      */
@@ -661,8 +656,8 @@ class ModulesTest extends TestCase
     }
 
     /**
-     * Test that flush clears both the modules and resolved
-     * paths, forcing re-resolution on the next call.
+     * Test that flush clears both the modules and resolved paths, forcing
+     * re-resolution on the next call.
      *
      * @return void
      */
