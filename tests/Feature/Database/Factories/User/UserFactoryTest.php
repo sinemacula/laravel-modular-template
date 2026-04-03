@@ -54,11 +54,11 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the definition generates a name that is a non-empty string.
+     * Test that the definition generates a non-empty name.
      *
      * @return void
      */
-    public function testDefinitionGeneratesUniqueName(): void
+    public function testDefinitionGeneratesNonEmptyName(): void
     {
         /** @var \App\User\Models\User $userA */
         $userA = User::factory()->create();
@@ -188,7 +188,6 @@ class UserFactoryTest extends TestCase
             'password',
         );
 
-        $reflection->setAccessible(true);
         $reflection->setValue(null, null);
     }
 }

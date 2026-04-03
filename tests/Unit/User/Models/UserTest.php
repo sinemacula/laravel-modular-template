@@ -159,8 +159,6 @@ class UserTest extends TestCase
         $user   = new User;
         $method = new \ReflectionMethod(User::class, 'casts');
 
-        $method->setAccessible(true);
-
         /** @var array<string, string> */
         return $method->invoke($user);
     }

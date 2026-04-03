@@ -26,8 +26,7 @@ use Tests\Support\Spies\SpyModuleServiceProvider;
 #[CoversClass(ModuleServiceProvider::class)]
 class ModuleServiceProviderTest extends TestCase
 {
-    use InteractsWithModules, ManagesTemporaryFiles;
-    use MockeryPHPUnitIntegration;
+    use InteractsWithModules, ManagesTemporaryFiles, MockeryPHPUnitIntegration;
 
     /**
      * Set up the test fixtures.

@@ -5,6 +5,7 @@ namespace Tests\Feature\User\Models;
 use App\User\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Tests\TestCase;
 
@@ -51,6 +52,7 @@ class UserFeatureTest extends TestCase
         ]);
 
         static::assertNotSame('secret', $user->password);
+        static::assertTrue(Hash::check('secret', $user->password));
     }
 
     /**
@@ -63,6 +65,7 @@ class UserFeatureTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->create();
 
+        static::assertNotNull($user->password);
         static::assertArrayNotHasKey('password', $user->toArray());
     }
 
@@ -76,6 +79,7 @@ class UserFeatureTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->remembered()->create();
 
+        static::assertNotNull($user->remember_token);
         static::assertArrayNotHasKey(
             'remember_token',
             $user->toArray(),

@@ -4,24 +4,36 @@
 [![Maintainability](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/maintainability.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
 [![Code Coverage](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/coverage.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
 
-A GitHub template for building Laravel 13 applications with a modular architecture. Each module acts as an isolated
-`app/` directory with its own models, controllers, routes, commands, listeners, views, and translations — all wired into
-Laravel's native service discovery.
+A GitHub template for building **stateless API** applications with Laravel 13 using a modular architecture. Each module
+acts as an isolated `app/` directory with its own models, controllers, routes, commands, listeners, events, observers,
+policies, and more — all wired into Laravel's native service discovery.
+
+This template is designed for API-first development. All frontend scaffolding, sessions, and web middleware have been
+removed. Routes are treated as API routes with no prefix.
 
 ## How It Works
 
 The standard `app/` directory is replaced by a `modules/` directory. Each subdirectory under `modules/` is a
-self-contained module:
+self-contained module that follows standard Laravel conventions:
 
 ```text
 modules/
-├── Foundation/          # Core framework module
-│   ├── Configuration/   # Module discovery, application builder
-│   ├── Console/         # Commands and schedule
-│   ├── Providers/       # Service providers
-│   └── Support/         # Helpers
-└── User/                # Example domain module
-    └── Models/
+├── Foundation/              # Core framework module
+│   ├── Configuration/       # Module discovery, application builder
+│   ├── Console/             # Commands and schedule
+│   ├── Providers/           # Service providers
+│   └── Support/             # Helpers
+└── User/                    # Example domain module
+    ├── Events/              # Domain events
+    ├── Http/
+    │   ├── Controllers/     # API controllers
+    │   ├── Requests/        # Form request validation
+    │   ├── Resources/       # API resources
+    │   └── routes.php       # Module routes
+    ├── Listeners/           # Event listeners
+    ├── Models/              # Eloquent models
+    ├── Observers/           # Model observers
+    └── Policies/            # Authorization policies
 ```
 
 Modules are auto-discovered at boot time and cached for performance. All standard Laravel conventions work inside each
@@ -38,6 +50,9 @@ module — there is no new API to learn.
 | Views             | `Resources/views/`     | Registered in `ModuleServiceProvider` |
 | Translations      | `Resources/lang/`      | Registered in `ModuleServiceProvider` |
 | Service providers | `Providers/`           | Loaded via `withProviders()`          |
+
+Everything else — controllers, requests, resources, events, observers, policies, models, jobs, mail, notifications —
+works via PSR-4 autoloading. No registration required.
 
 ### Module Caching
 
@@ -65,14 +80,24 @@ Create a directory under `modules/` with the desired namespace:
 
 ```text
 modules/Billing/
+├── Events/
+│   └── InvoicePaid.php
 ├── Http/
+│   ├── Controllers/
+│   │   └── InvoiceController.php
+│   ├── Requests/
+│   │   └── CreateInvoiceRequest.php
+│   ├── Resources/
+│   │   └── InvoiceResource.php
 │   └── routes.php
+├── Listeners/
+│   └── SendInvoiceNotification.php
 ├── Models/
 │   └── Invoice.php
-├── Listeners/
-│   └── InvoicePaidListener.php
-└── Providers/
-    └── BillingServiceProvider.php
+├── Observers/
+│   └── InvoiceObserver.php
+└── Policies/
+    └── InvoicePolicy.php
 ```
 
 The namespace follows PSR-4: `App\Billing\Models\Invoice`. No registration is required — the module is discovered
@@ -84,13 +109,12 @@ automatically.
 composer dev             # Server, queue worker, and log viewer
 composer test            # Run tests
 composer test -- --parallel  # Run tests in parallel
-composer check           # Static analysis and code quality
+composer check           # Static analysis and code quality (qlty)
 composer format          # Auto-format code
 ```
 
 Parallel testing is supported out of the box via ParaTest. Each parallel process gets its own database, seeded
-automatically via
-`AppServiceProvider`.
+automatically via `AppServiceProvider`.
 
 ## Requirements
 

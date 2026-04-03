@@ -24,8 +24,7 @@ use Tests\Support\Spies\SpyApplicationBuilder;
 #[CoversClass(ApplicationBuilder::class)]
 class ApplicationBuilderTest extends TestCase
 {
-    use InteractsWithModules;
-    use ManagesTemporaryFiles;
+    use InteractsWithModules, ManagesTemporaryFiles;
 
     /**
      * Set up the test environment.

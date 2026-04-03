@@ -25,8 +25,7 @@ use Tests\Support\Concerns\ManagesTemporaryFiles;
 #[CoversClass(Modules::class)]
 class ModulesTest extends TestCase
 {
-    use InteractsWithModules;
-    use ManagesTemporaryFiles;
+    use InteractsWithModules, ManagesTemporaryFiles;
 
     /**
      * Set up the test environment.

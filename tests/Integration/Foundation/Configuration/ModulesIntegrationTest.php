@@ -26,8 +26,7 @@ use Tests\TestCase;
 #[CoversClass(Modules::class)]
 class ModulesIntegrationTest extends TestCase
 {
-    use InteractsWithModules;
-    use ManagesTemporaryFiles;
+    use InteractsWithModules, ManagesTemporaryFiles;
 
     /**
      * Set up the temporary directory structure and reset Modules static state
