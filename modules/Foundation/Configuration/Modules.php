@@ -83,18 +83,22 @@ class Modules
     }
 
     /**
-     * Get the path to the resources directory for a module.
+     * Get the path to a module's resources directory.
      *
-     * A namespace/module can be provided in the format {module}::{path}.
+     * A module can be specified using the {module}::{path} format.
+     * When no module prefix is present, the default module is used.
      *
      * @param  string  $path
      * @return string
      */
     public static function resourcePath(string $path = ''): string
     {
-        $module = self::extractModuleFromPath($path) ?? self::DEFAULT_MODULE;
+        $module = self::extractModuleFromPath($path)
+            ?? self::DEFAULT_MODULE;
 
-        return self::resolvePaths(ModulePath::RESOURCES->value)[$module] ?? '';
+        return self::resolvePaths(
+            ModulePath::RESOURCES->value,
+        )[$module] ?? '';
     }
 
     /**
@@ -190,14 +194,15 @@ class Modules
     /**
      * Extract the module name from the given path.
      *
-     * Parses the {module}::{path} format and returns the module segment, or
-     * null if no separator is present.
+     * Parses the {module}::{path} format and returns the module
+     * segment, or null if no separator is present.
      *
      * @param  string  $path
      * @return string|null
      */
-    private static function extractModuleFromPath(string $path): ?string
-    {
+    private static function extractModuleFromPath(
+        string $path,
+    ): ?string {
         $parts = explode('::', $path, 2);
 
         if (count($parts) === 2 && $parts[0] !== '') {
