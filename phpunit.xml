@@ -21,6 +21,10 @@
             <directory>database/factories</directory>
             <directory>database/seeders</directory>
         </include>
+        <exclude>
+            <file>modules/Foundation/Console/schedule.php</file>
+            <file>modules/User/Http/routes.php</file>
+        </exclude>
     </source>
     <php>
         <env name="APP_ENV" value="testing"/>
