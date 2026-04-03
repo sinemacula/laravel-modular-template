@@ -140,9 +140,8 @@ class AppServiceProviderTest extends TestCase
      * @param  string  $environment
      * @return \Illuminate\Contracts\Foundation\Application&\Mockery\MockInterface
      */
-    private function createMockApplication(
-        string $environment,
-    ): Application {
+    private function createMockApplication(string $environment): Application
+    {
         /** @var \Illuminate\Contracts\Foundation\Application&\Mockery\MockInterface $app */
         $app = \Mockery::mock(Application::class);
 

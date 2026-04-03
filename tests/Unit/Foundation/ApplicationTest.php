@@ -259,9 +259,8 @@ class ApplicationTest extends TestCase
      * @param  \App\Foundation\Configuration\ApplicationBuilder  $builder
      * @return \App\Foundation\Application
      */
-    private function extractAppFromBuilder(
-        ApplicationBuilder $builder,
-    ): Application {
+    private function extractAppFromBuilder(ApplicationBuilder $builder): Application
+    {
         $reflection = new \ReflectionProperty($builder, 'app');
 
         return $reflection->getValue($builder); // @phpstan-ignore return.type

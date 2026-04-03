@@ -43,10 +43,8 @@ class SpyModuleServiceProvider extends ModuleServiceProvider
      * @param  mixed  $namespace
      * @return void
      */
-    protected function loadTranslationsFrom(
-        mixed $path,
-        mixed $namespace = null,
-    ): void {
+    protected function loadTranslationsFrom(mixed $path, mixed $namespace = null): void
+    {
         $this->loadTranslationsFromCalls[] = [$path, $namespace];
     }
 
@@ -58,11 +56,8 @@ class SpyModuleServiceProvider extends ModuleServiceProvider
      * @param  string|null  $key
      * @return void
      */
-    protected function optimizes(
-        ?string $optimize = null,
-        ?string $clear = null,
-        ?string $key = null,
-    ): void {
+    protected function optimizes(?string $optimize = null, ?string $clear = null, ?string $key = null): void
+    {
         $this->optimizesCalls[] = [$optimize, $clear, $key];
     }
 }

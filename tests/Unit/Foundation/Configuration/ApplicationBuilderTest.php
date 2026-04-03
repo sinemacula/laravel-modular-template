@@ -262,9 +262,8 @@ class ApplicationBuilderTest extends TestCase
      * @param  \Illuminate\Foundation\Application  $app
      * @return \Tests\Support\Spies\SpyApplicationBuilder
      */
-    private function createSpyBuilder(
-        Application $app,
-    ): SpyApplicationBuilder {
+    private function createSpyBuilder(Application $app): SpyApplicationBuilder
+    {
         return new SpyApplicationBuilder($app);
     }
 }

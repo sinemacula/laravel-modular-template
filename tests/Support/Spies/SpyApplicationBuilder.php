@@ -31,7 +31,7 @@ class SpyApplicationBuilder extends ApplicationBuilder
     public bool $withProvidersCalled = false;
 
     /**
-     * @inheritDoc
+     * Record that withKernels was called.
      *
      * @return static
      */
@@ -43,14 +43,13 @@ class SpyApplicationBuilder extends ApplicationBuilder
     }
 
     /**
-     * @inheritDoc
+     * Capture event discovery paths.
      *
      * @param  bool|iterable<string>  $discover
      * @return static
      */
-    public function withEvents(
-        bool|iterable $discover = true,
-    ): static {
+    public function withEvents(bool|iterable $discover = true): static
+    {
         if (is_iterable($discover)) {
             $this->capturedEvents = [...$discover];
         }
@@ -59,7 +58,7 @@ class SpyApplicationBuilder extends ApplicationBuilder
     }
 
     /**
-     * @inheritDoc
+     * Capture command paths.
      *
      * @param  array<int, string>  $commands
      * @return static
@@ -72,16 +71,14 @@ class SpyApplicationBuilder extends ApplicationBuilder
     }
 
     /**
-     * @inheritDoc
+     * Record that withProviders was called.
      *
      * @param  array<int, string>  $providers
      * @param  bool  $withBootstrapProviders
      * @return static
      */
-    public function withProviders(
-        array $providers = [],
-        bool $withBootstrapProviders = true,
-    ): static {
+    public function withProviders(array $providers = [], bool $withBootstrapProviders = true): static
+    {
         $this->withProvidersCalled = true;
 
         return $this;

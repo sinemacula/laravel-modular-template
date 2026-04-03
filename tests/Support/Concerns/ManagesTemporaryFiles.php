@@ -24,9 +24,8 @@ trait ManagesTemporaryFiles
      * @param  string  $prefix
      * @return string the absolute path to the created directory
      */
-    protected function createTempDirectory(
-        string $prefix = 'test_',
-    ): string {
+    protected function createTempDirectory(string $prefix = 'test_'): string
+    {
         $this->tempDir = sys_get_temp_dir()
             . DIRECTORY_SEPARATOR
             . $prefix . uniqid();
@@ -58,10 +57,8 @@ trait ManagesTemporaryFiles
      * @param  string  $content
      * @return void
      */
-    protected function createFile(
-        string $path,
-        string $content = '',
-    ): void {
+    protected function createFile(string $path, string $content = ''): void
+    {
         $fullPath = $this->tempDir
             . DIRECTORY_SEPARATOR . $path;
 
@@ -84,9 +81,8 @@ trait ManagesTemporaryFiles
      * @param  array<string, list<string>>  $modules
      * @return void
      */
-    protected function createModuleStructure(
-        array $modules,
-    ): void {
+    protected function createModuleStructure(array $modules): void
+    {
         $this->createDirectory('modules');
 
         foreach ($modules as $name => $paths) {
