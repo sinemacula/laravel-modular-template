@@ -3,11 +3,13 @@
 /*
  * Register the App namespace autoloader for qlty's PHPStan sandbox.
  *
- * Qlty strips the autoload section from composer.json when installing
- * tools. This bootstrap file restores the PSR-4 mapping so Larastan
- * can resolve App\ classes during analysis.
+ * Qlty strips the autoload section from composer.json when installing tools.
+ * This bootstrap file restores the PSR-4 mapping so Larastan can resolve App\
+ * classes during analysis.
+ *
+ * @SuppressWarnings("php:S4833")
+ * @SuppressWarnings("php:S2003")
  */
-
 spl_autoload_register(static function (string $class): void {
     $prefix  = 'App\\';
     $baseDir = dirname(__DIR__, 2) . '/modules/';
@@ -21,6 +23,6 @@ spl_autoload_register(static function (string $class): void {
     $file          = $baseDir . str_replace('\\', '/', $relativeClass) . '.php';
 
     if (file_exists($file)) {
-        require $file; // qlty-ignore: radarlint-php:php:S4833, radarlint-php:php:S2003
+        require $file;
     }
 });
