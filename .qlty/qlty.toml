@@ -123,6 +123,5 @@ name = "yamllint"
 [[plugin]]
 name = "phpstan"
 version = "2.1.38"
-mode = "monitor"
 package_file = ".qlty/configs/composer.json"
 package_filters = ["phpstan", "larastan"]
