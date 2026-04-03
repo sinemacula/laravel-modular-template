@@ -31,6 +31,12 @@ final class Application extends BaseApplication
     /**
      * Get the path to the resources directory.
      *
+     * Supports module-scoped paths using the {module}::{path}
+     * format. When a module prefix is present, the path resolves
+     * to that module's Resources directory. Otherwise, the
+     * default module is used, falling back to the standard
+     * Laravel resources directory.
+     *
      * phpcs:disable Squiz.Commenting.FunctionComment.ScalarTypeHintMissing
      *
      * @param  string  $path
@@ -41,12 +47,13 @@ final class Application extends BaseApplication
     {
         // phpcs:enable
         $modulePath = Modules::resourcePath($path);
+        $subPath    = self::stripModulePrefix($path);
 
         if ($modulePath !== '') {
-            return $this->joinPaths($modulePath, $path);
+            return $this->joinPaths($modulePath, $subPath);
         }
 
-        return parent::resourcePath($path);
+        return parent::resourcePath($subPath);
     }
 
     /**
@@ -62,5 +69,23 @@ final class Application extends BaseApplication
     {
         // phpcs:enable
         return $this->joinPaths($this->appPath ?: $this->basePath('modules'), $path);
+    }
+
+    /**
+     * Strip the module prefix from a path.
+     *
+     * Removes the {module}:: segment if present, returning only
+     * the path portion.
+     *
+     * @param  string  $path
+     * @return string
+     */
+    private static function stripModulePrefix(string $path): string
+    {
+        if (str_contains($path, '::')) {
+            return explode('::', $path, 2)[1];
+        }
+
+        return $path;
     }
 }

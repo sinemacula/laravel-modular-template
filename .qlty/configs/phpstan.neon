@@ -14,6 +14,11 @@ parameters:
 		- identifier: greaterOrEqual.alwaysTrue
 		- identifier: smaller.alwaysTrue
 		- identifier: classConstant.deprecated
+		- identifier: property.notFound
+		- identifier: property.uninitialized
+		- identifier: method.childReturnType
+		- identifier: method.childParameterType
+		- identifier: class.childType
 
 	scanDirectories:
 		- %currentWorkingDirectory%/database
