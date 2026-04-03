@@ -5,9 +5,7 @@
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "phpstan/phpstan-strict-rules": "^2.0",
-        "larastan/larastan": "^3.9",
-        "titasgailius/larastan-extended": "^0.0.2"
+        "phpstan/phpstan-strict-rules": "^2.0"
     },
     "config": {
         "allow-plugins": {
