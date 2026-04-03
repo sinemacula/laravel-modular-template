@@ -12,7 +12,7 @@
 
 use App\Foundation\Configuration\Modules;
 
-if (!function_exists('module_path')) {
+if (!function_exists('module_path')) { // @codeCoverageIgnore
     /**
      * Get the path to the modules directory.
      *
