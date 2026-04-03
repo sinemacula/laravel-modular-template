@@ -1,9 +1,6 @@
 parameters:
 	level: 8
 
-	bootstrapFiles:
-		- %currentWorkingDirectory%/.qlty/configs/phpstan-bootstrap.php
-
 	ignoreErrors:
 		- identifier: argument.type
 		- identifier: ternary.shortNotAllowed
