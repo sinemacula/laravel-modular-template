@@ -8,6 +8,7 @@
         "phpstan/phpstan-strict-rules": "^2.0",
         "larastan/larastan": "^3.9",
         "titasgailius/larastan-extended": "^0.0.2",
+        "sinemacula/coding-standards": "^1.0",
         "slevomat/coding-standard": "^8.28",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.2"
     },
