@@ -38,8 +38,7 @@ class UserObserverTest extends TestCase
     }
 
     /**
-     * Test that the dispatched event receives the correct user
-     * instance.
+     * Test that the dispatched event receives the correct user instance.
      *
      * @return void
      */

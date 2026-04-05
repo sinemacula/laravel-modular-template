@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4deb22b2101d65625388a0d4c3431ce4",
+    "content-hash": "dce146ed4ddb800bc03620fec9d34a55",
     "packages": [
         {
             "name": "brick/math",
@@ -3297,6 +3297,82 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.9.2"
             },
             "time": "2025-12-14T04:43:48+00:00"
+        },
+        {
+            "name": "sinemacula/laravel-modules",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sinemacula/laravel-modules.git",
+                "reference": "c3cb495df03e7cc5d2e2bf65fbbe5706e7fc329c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sinemacula/laravel-modules/zipball/c3cb495df03e7cc5d2e2bf65fbbe5706e7fc329c",
+                "reference": "c3cb495df03e7cc5d2e2bf65fbbe5706e7fc329c",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "brianium/paratest": "^7.20",
+                "doctrine/coding-standard": "^14.0",
+                "friendsofphp/php-cs-fixer": "^3.94",
+                "larastan/larastan": "^3.9",
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^11.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpdoc-parser": "^2.3",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^12.5",
+                "sinemacula/coding-standards": "^1.0",
+                "slevomat/coding-standard": "^8.28",
+                "squizlabs/php_codesniffer": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SineMacula\\Laravel\\Modules\\Providers\\ModuleServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Support/helpers.php"
+                ],
+                "psr-4": {
+                    "SineMacula\\Laravel\\Modules\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Carey",
+                    "email": "bdmc@sinemacula.co.uk"
+                }
+            ],
+            "description": "A lightweight, convention-driven modular architecture package for Laravel - auto-discovers modules as directories with zero manifests, zero boilerplate, and nothing new to learn.",
+            "keywords": [
+                "architecture",
+                "laravel",
+                "modular",
+                "modules",
+                "sine macula"
+            ],
+            "support": {
+                "issues": "https://github.com/sinemacula/laravel-modules/issues",
+                "source": "https://github.com/sinemacula/laravel-modules/tree/v1.0.1"
+            },
+            "time": "2026-04-05T02:21:47+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8459,16 +8535,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.5.15",
+            "version": "12.5.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "aeb6899ffdbbf4b4ff5e6b6ebb77b35c51bb6d9a"
+                "reference": "b2429f58ae75cae980b5bb9873abe4de6aac8b58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/aeb6899ffdbbf4b4ff5e6b6ebb77b35c51bb6d9a",
-                "reference": "aeb6899ffdbbf4b4ff5e6b6ebb77b35c51bb6d9a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b2429f58ae75cae980b5bb9873abe4de6aac8b58",
+                "reference": "b2429f58ae75cae980b5bb9873abe4de6aac8b58",
                 "shasum": ""
             },
             "require": {
@@ -8537,7 +8613,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.15"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.16"
             },
             "funding": [
                 {
@@ -8545,7 +8621,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-03-31T06:41:33+00:00"
+            "time": "2026-04-03T05:26:42+00:00"
         },
         {
             "name": "react/cache",

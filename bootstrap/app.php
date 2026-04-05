@@ -1,9 +1,9 @@
 <?php
 
-use App\Foundation\Application;
-use App\Foundation\Configuration\Modules;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use SineMacula\Laravel\Modules\Application;
+use SineMacula\Laravel\Modules\Configuration\Modules;
 
 Modules::setBasePath(dirname(__DIR__));
 

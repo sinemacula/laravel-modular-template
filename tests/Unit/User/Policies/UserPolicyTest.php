@@ -34,8 +34,8 @@ class UserPolicyTest extends TestCase
     }
 
     /**
-     * Test that view returns true when the authenticated user matches
-     * the target user.
+     * Test that view returns true when the authenticated user matches the
+     * target user.
      *
      * @return void
      */
@@ -48,8 +48,8 @@ class UserPolicyTest extends TestCase
     }
 
     /**
-     * Test that view returns false when the authenticated user
-     * differs from the target user.
+     * Test that view returns false when the authenticated user differs from
+     * the target user.
      *
      * @return void
      */
@@ -65,8 +65,8 @@ class UserPolicyTest extends TestCase
     }
 
     /**
-     * Test that update returns true when the authenticated user
-     * matches the target user.
+     * Test that update returns true when the authenticated user matches the
+     * target user.
      *
      * @return void
      */
@@ -79,8 +79,8 @@ class UserPolicyTest extends TestCase
     }
 
     /**
-     * Test that update returns false when the authenticated user
-     * differs from the target user.
+     * Test that update returns false when the authenticated user differs from
+     * the target user.
      *
      * @return void
      */
@@ -96,8 +96,8 @@ class UserPolicyTest extends TestCase
     }
 
     /**
-     * Test that delete returns true when the authenticated user
-     * matches the target user.
+     * Test that delete returns true when the authenticated user matches the
+     * target user.
      *
      * @return void
      */
@@ -110,8 +110,8 @@ class UserPolicyTest extends TestCase
     }
 
     /**
-     * Test that delete returns false when the authenticated user
-     * differs from the target user.
+     * Test that delete returns false when the authenticated user differs from
+     * the target user.
      *
      * @return void
      */

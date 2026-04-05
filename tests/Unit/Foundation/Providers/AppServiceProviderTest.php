@@ -74,8 +74,8 @@ class AppServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that parallel testing registration is skipped when the application
-     * is not in the testing environment.
+     * Test that parallel testing registration is skipped when the application is
+     * not in the testing environment.
      *
      * @return void
      */

@@ -163,8 +163,7 @@ class UserFactoryTest extends TestCase
     }
 
     /**
-     * Test that the remembered state generates a token of exactly 10
-     * characters.
+     * Test that the remembered state generates a token of exactly 10 characters.
      *
      * @return void
      */

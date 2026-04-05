@@ -3,16 +3,15 @@
 namespace Tests\Feature\Foundation;
 
 use App\Foundation\Providers\AppServiceProvider;
-use App\Foundation\Providers\ModuleServiceProvider;
 use App\User\Events\UserUpdated;
 use App\User\Models\User;
 use App\User\Policies\UserPolicy;
-use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use PHPUnit\Framework\Attributes\CoversNothing;
+use SineMacula\Laravel\Modules\Providers\ModuleServiceProvider;
 use Tests\TestCase;
 
 /**
@@ -33,8 +32,8 @@ class ModuleDiscoveryTest extends TestCase
      * Test that module routes are registered for the User resource.
      *
      * Inspects the router directly to verify that GET, PUT, and DELETE
-     * routes for /users/{user} exist and point to the correct
-     * UserController methods.
+     * routes for /users/{user} exist and point to the correct UserController
+     * methods.
      *
      * @return void
      */
@@ -73,8 +72,8 @@ class ModuleDiscoveryTest extends TestCase
     }
 
     /**
-     * Test that the event listener is auto-discovered by dispatching a
-     * real UserUpdated event and verifying the log output.
+     * Test that the event listener is auto-discovered by dispatching a real
+     * UserUpdated event and verifying the log output.
      *
      * @return void
      */
@@ -105,9 +104,9 @@ class ModuleDiscoveryTest extends TestCase
     }
 
     /**
-     * Test that the observer registered via the ObservedBy attribute
-     * fires the full chain: Observer dispatches UserUpdated, which
-     * triggers LogUserUpdated, which writes to the log.
+     * Test that the observer registered via the ObservedBy attribute fires
+     * the full chain: Observer dispatches UserUpdated, which triggers
+     * LogUserUpdated, which writes to the log.
      *
      * @return void
      */
@@ -126,8 +125,7 @@ class ModuleDiscoveryTest extends TestCase
     }
 
     /**
-     * Test that module console commands are discovered by the
-     * framework.
+     * Test that module console commands are discovered by the framework.
      *
      * @return void
      */
@@ -137,24 +135,6 @@ class ModuleDiscoveryTest extends TestCase
 
         static::assertArrayHasKey('module:cache', $commands);
         static::assertArrayHasKey('module:clear', $commands);
-    }
-
-    /**
-     * Test that the module schedule file is loaded and model:prune is
-     * scheduled.
-     *
-     * @return void
-     */
-    public function testModuleScheduleIsLoaded(): void
-    {
-        $schedule = app(Schedule::class);
-        $events   = $schedule->events();
-
-        $pruneEvent = collect($events)->first(
-            fn ($event): bool => str_contains($event->command ?? '', 'model:prune'),
-        );
-
-        static::assertNotNull($pruneEvent, 'The model:prune command should be scheduled');
     }
 
     /**

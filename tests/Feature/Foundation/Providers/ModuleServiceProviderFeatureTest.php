@@ -2,9 +2,8 @@
 
 namespace Tests\Feature\Foundation\Providers;
 
-use App\Foundation\Providers\ModuleServiceProvider;
 use Illuminate\Support\ServiceProvider;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversNothing;
 use Tests\TestCase;
 
 /**
@@ -17,7 +16,7 @@ use Tests\TestCase;
  *
  * @internal
  */
-#[CoversClass(ModuleServiceProvider::class)]
+#[CoversNothing]
 class ModuleServiceProviderFeatureTest extends TestCase
 {
     /**
