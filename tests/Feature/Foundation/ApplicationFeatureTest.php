@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Foundation;
 
-use App\Foundation\Application;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversNothing;
+use SineMacula\Laravel\Modules\Application;
 use Tests\TestCase;
 
 /**
@@ -14,7 +14,7 @@ use Tests\TestCase;
  *
  * @internal
  */
-#[CoversClass(Application::class)]
+#[CoversNothing]
 class ApplicationFeatureTest extends TestCase
 {
     /**

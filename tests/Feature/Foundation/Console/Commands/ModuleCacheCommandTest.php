@@ -2,9 +2,7 @@
 
 namespace Tests\Feature\Foundation\Console\Commands;
 
-use App\Foundation\Console\Commands\ModuleCacheCommand;
-use App\Foundation\Console\Commands\ModuleClearCommand;
-use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversNothing;
 use Tests\TestCase;
 
 /**
@@ -22,8 +20,7 @@ use Tests\TestCase;
  *
  * @internal
  */
-#[CoversClass(ModuleCacheCommand::class)]
-#[CoversClass(ModuleClearCommand::class)]
+#[CoversNothing]
 class ModuleCacheCommandTest extends TestCase
 {
     /** @var string The path to the module cache file. */

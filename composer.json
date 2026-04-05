@@ -18,9 +18,10 @@
     "license": "Apache-2.0",
     "require": {
         "php": "^8.3",
+        "ext-pdo": "*",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
-        "ext-pdo": "*"
+        "sinemacula/laravel-modules": "*"
     },
     "require-dev": {
         "ext-posix": "*",
@@ -40,15 +41,13 @@
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
         "phpunit/phpunit": "^12.5.12",
+        "sinemacula/coding-standards": "^1.0",
         "slevomat/coding-standard": "^8.28",
         "spatie/laravel-ignition": "^2.12",
         "squizlabs/php_codesniffer": "^4.0",
         "titasgailius/larastan-extended": "^0.0.2"
     },
     "autoload": {
-        "files": [
-            "modules/Foundation/Support/helpers.php"
-        ],
         "psr-4": {
             "App\\": "modules/",
             "Database\\Factories\\": "database/factories/",

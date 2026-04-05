@@ -94,8 +94,7 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that viewing a user profile without authentication
-     * returns 401.
+     * Test that viewing a user profile without authentication returns 401.
      *
      * @return void
      */
@@ -110,8 +109,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that an authenticated user can update their own profile
-     * and the response reflects the new values.
+     * Test that an authenticated user can update their own profile and the
+     * response reflects the new values.
      *
      * @return void
      */
@@ -145,8 +144,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with an invalid email returns 422 with
-     * a validation error on the email field.
+     * Test that updating with an invalid email returns 422 with a validation
+     * error on the email field.
      *
      * @return void
      */
@@ -165,8 +164,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating another user's profile returns 403 and
-     * does not modify the target user.
+     * Test that updating another user's profile returns 403 and does not
+     * modify the target user.
      *
      * @return void
      */
@@ -192,8 +191,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that an authenticated user can delete their own account
-     * and it is removed from the database.
+     * Test that an authenticated user can delete their own account and it
+     * is removed from the database.
      *
      * @return void
      */
@@ -213,8 +212,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that deleting another user's account returns 403 and
-     * the target user remains in the database.
+     * Test that deleting another user's account returns 403 and the target
+     * user remains in the database.
      *
      * @return void
      */
@@ -236,8 +235,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with a duplicate email returns 422 with
-     * a validation error on the email field.
+     * Test that updating with a duplicate email returns 422 with a validation
+     * error on the email field.
      *
      * @return void
      */
@@ -258,8 +257,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with only the name field updates just
-     * the name and leaves the email unchanged.
+     * Test that updating with only the name field updates just the name and
+     * leaves the email unchanged.
      *
      * @return void
      */
@@ -288,8 +287,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with an empty body returns 200 and does
-     * not modify the user because all fields are 'sometimes'.
+     * Test that updating with an empty body returns 200 and does not modify
+     * the user because all fields are 'sometimes'.
      *
      * @return void
      */
@@ -317,8 +316,7 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with a name exceeding 255 characters
-     * returns 422.
+     * Test that updating with a name exceeding 255 characters returns 422.
      *
      * @return void
      */
@@ -337,8 +335,7 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with an email exceeding 255 characters
-     * returns 422.
+     * Test that updating with an email exceeding 255 characters returns 422.
      *
      * @return void
      */
@@ -357,8 +354,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that a user can update their email to their own current
-     * email without triggering a unique violation.
+     * Test that a user can update their email to their own current email
+     * without triggering a unique violation.
      *
      * @return void
      */
@@ -396,8 +393,7 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating a user without authentication
-     * returns 401.
+     * Test that updating a user without authentication returns 401.
      *
      * @return void
      */
@@ -414,8 +410,7 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that deleting a user without authentication
-     * returns 401.
+     * Test that deleting a user without authentication returns 401.
      *
      * @return void
      */

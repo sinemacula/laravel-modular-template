@@ -18,8 +18,7 @@ use Tests\TestCase;
 class UpdateUserRequestTest extends TestCase
 {
     /**
-     * Test that the rules method returns the expected validation
-     * keys.
+     * Test that the rules method returns the expected validation keys.
      *
      * @return void
      */
@@ -35,8 +34,7 @@ class UpdateUserRequestTest extends TestCase
     }
 
     /**
-     * Test that the name rule includes sometimes, string, and
-     * max:255.
+     * Test that the name rule includes sometimes, string, and max:255.
      *
      * @return void
      */
@@ -52,8 +50,7 @@ class UpdateUserRequestTest extends TestCase
     }
 
     /**
-     * Test that the email rule includes sometimes, string, email,
-     * and max:255.
+     * Test that the email rule includes sometimes, string, email, and max:255.
      *
      * @return void
      */

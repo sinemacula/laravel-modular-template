@@ -42,8 +42,7 @@ class UserObserverTest extends TestCase
     }
 
     /**
-     * Test that the dispatched event contains the correct user
-     * instance.
+     * Test that the dispatched event contains the correct user instance.
      *
      * @return void
      */
@@ -63,8 +62,7 @@ class UserObserverTest extends TestCase
     }
 
     /**
-     * Test that creating a user does not dispatch the
-     * UserUpdated event.
+     * Test that creating a user does not dispatch the UserUpdated event.
      *
      * @return void
      */

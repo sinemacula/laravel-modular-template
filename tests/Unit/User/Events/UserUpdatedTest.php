@@ -34,8 +34,8 @@ class UserUpdatedTest extends TestCase
     }
 
     /**
-     * Test that the user property is accessible and contains the
-     * correct User instance.
+     * Test that the user property is accessible and contains the correct
+     * User instance.
      *
      * @return void
      */

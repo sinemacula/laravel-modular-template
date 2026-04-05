@@ -71,8 +71,7 @@ class UserResourceTest extends TestCase
     }
 
     /**
-     * Test that toArray does not include password or
-     * remember_token.
+     * Test that toArray does not include password or remember_token.
      *
      * @return void
      */

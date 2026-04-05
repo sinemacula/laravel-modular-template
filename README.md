@@ -4,25 +4,35 @@
 [![Maintainability](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/maintainability.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
 [![Code Coverage](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/coverage.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
 
-A GitHub template for building **stateless API** applications with Laravel 13 using a modular architecture. Each module
-acts as an isolated `app/` directory with its own models, controllers, routes, commands, listeners, events, observers,
-policies, and more — all wired into Laravel's native service discovery.
+A GitHub template for building **stateless API** applications with Laravel 13 using a modular architecture. Powered by
+[`sinemacula/laravel-modules`](https://github.com/sinemacula/laravel-modules), the standard `app/` directory is replaced
+by a `modules/` directory where each subdirectory is a self-contained module — all wired into Laravel's native service
+discovery with zero boilerplate.
 
-This template is designed for API-first development. All frontend scaffolding, sessions, and web middleware have been
-removed. Routes are treated as API routes with no prefix.
+> **Warning**
+> This template is designed exclusively for **API-first development**. All frontend scaffolding, Blade views, sessions,
+> web middleware, and the root `resources/` directory have been removed. Routes are treated as API routes with no prefix.
+> If you need a full-stack web application, this is not the right starting point.
 
-## How It Works
+## What's Included
 
-The standard `app/` directory is replaced by a `modules/` directory. Each subdirectory under `modules/` is a
-self-contained module that follows standard Laravel conventions:
+This template comes pre-configured with:
+
+- **Modular architecture** via [`sinemacula/laravel-modules`](https://github.com/sinemacula/laravel-modules) — module
+  auto-discovery, caching, and artisan commands
+- **Foundation module** — application service provider and parallel testing support
+- **User module** — a complete example demonstrating controllers, form requests, API resources, events, listeners,
+  observers, and policies
+- **100% test coverage** — unit and feature tests for all application code
+- **Static analysis** — PHPStan level 8 via qlty with
+  [`sinemacula/coding-standards`](https://github.com/sinemacula/coding-standards)
+
+## Project Structure
 
 ```text
 modules/
 ├── Foundation/              # Core framework module
-│   ├── Configuration/       # Module discovery, application builder
-│   ├── Console/             # Commands and schedule
-│   ├── Providers/           # Service providers
-│   └── Support/             # Helpers
+│   └── Providers/           # Service providers
 └── User/                    # Example domain module
     ├── Events/              # Domain events
     ├── Http/
@@ -37,32 +47,9 @@ modules/
 ```
 
 Modules are auto-discovered at boot time and cached for performance. All standard Laravel conventions work inside each
-module — there is no new API to learn.
-
-### What Gets Discovered
-
-| Convention        | Module Path            | How It's Loaded                       |
-|-------------------|------------------------|---------------------------------------|
-| Routes            | `Http/routes.php`      | Passed to `withRouting(api: ...)`     |
-| Console commands  | `Console/Commands/`    | Glob-based via `withCommands()`       |
-| Scheduled tasks   | `Console/schedule.php` | Glob-based via `withCommands()`       |
-| Event listeners   | `Listeners/`           | Glob-based via `withEvents()`         |
-| Views             | `Resources/views/`     | Registered in `ModuleServiceProvider` |
-| Translations      | `Resources/lang/`      | Registered in `ModuleServiceProvider` |
-| Service providers | `Providers/`           | Loaded via `withProviders()`          |
-
-Everything else — controllers, requests, resources, events, observers, policies, models, jobs, mail, notifications —
-works via PSR-4 autoloading. No registration required.
-
-### Module Caching
-
-Module paths are cached to `bootstrap/cache/modules.php` and integrated into Laravel's `optimize` / `optimize:clear`
-lifecycle:
-
-```bash
-php artisan optimize        # Includes module:cache
-php artisan optimize:clear  # Includes module:clear
-```
+module — there is no new API to learn. See the
+[`sinemacula/laravel-modules` documentation](https://github.com/sinemacula/laravel-modules) for full details on what
+gets discovered and how module caching works.
 
 ## Getting Started
 
@@ -76,39 +63,31 @@ This installs dependencies, generates an app key, and runs migrations.
 
 ### Creating a Module
 
-Create a directory under `modules/` with the desired namespace:
+Use the artisan command provided by `sinemacula/laravel-modules`:
 
-```text
-modules/Billing/
-├── Events/
-│   └── InvoicePaid.php
-├── Http/
-│   ├── Controllers/
-│   │   └── InvoiceController.php
-│   ├── Requests/
-│   │   └── CreateInvoiceRequest.php
-│   ├── Resources/
-│   │   └── InvoiceResource.php
-│   └── routes.php
-├── Listeners/
-│   └── SendInvoiceNotification.php
-├── Models/
-│   └── Invoice.php
-├── Observers/
-│   └── InvoiceObserver.php
-└── Policies/
-    └── InvoicePolicy.php
+```bash
+php artisan module:make Billing
 ```
 
-The namespace follows PSR-4: `App\Billing\Models\Invoice`. No registration is required — the module is discovered
-automatically.
+This scaffolds the standard directory structure under `modules/Billing/`. The namespace follows PSR-4:
+`App\Billing\Models\Invoice`. No registration is required — the module is discovered automatically.
+
+### Artisan Commands
+
+| Command              | Description                                                 |
+|----------------------|-------------------------------------------------------------|
+| `module:make {name}` | Scaffold a new module with the standard directory structure |
+| `module:list`        | List all discovered modules and their paths                 |
+| `module:cache`       | Cache discovered module paths for faster resolution         |
+| `module:clear`       | Clear the cached module paths                               |
+
+Module caching is integrated into Laravel's `optimize` / `optimize:clear` lifecycle.
 
 ## Development
 
 ```bash
 composer dev             # Server, queue worker, and log viewer
 composer test            # Run tests
-composer test -- --parallel  # Run tests in parallel
 composer check           # Static analysis and code quality (qlty)
 composer format          # Auto-format code
 ```

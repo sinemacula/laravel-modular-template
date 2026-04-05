@@ -8,10 +8,7 @@
         <testsuite name="Unit">
             <directory>tests/Unit</directory>
         </testsuite>
-        <testsuite name="Integration">
-            <directory>tests/Integration</directory>
-        </testsuite>
-        <testsuite name="Feature">
+<testsuite name="Feature">
             <directory>tests/Feature</directory>
         </testsuite>
     </testsuites>
@@ -22,7 +19,6 @@
             <directory>database/seeders</directory>
         </include>
         <exclude>
-            <file>modules/Foundation/Console/schedule.php</file>
             <file>modules/User/Http/routes.php</file>
         </exclude>
     </source>
