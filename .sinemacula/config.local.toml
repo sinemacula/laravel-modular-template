@@ -1,0 +1,7 @@
+# Personal developer settings — NOT committed to version control.
+# Lives at .sinemacula/config.local.toml in the user's repo root.
+# Values here supplement config.toml for the local developer.
+
+[author]
+name = "Ben Carey"
+email = "bdmc@sinemacula.co.uk"
