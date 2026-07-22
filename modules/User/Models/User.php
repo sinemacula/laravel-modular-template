@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Models;
 
 use App\User\Observers\UserObserver;
@@ -15,6 +17,15 @@ use Illuminate\Notifications\Notifiable;
 /**
  * User model.
  *
+ * @property int $id
+ * @property string $name
+ * @property string $email
+ * @property \Illuminate\Support\Carbon|null $email_verified_at
+ * @property string $password
+ * @property string|null $remember_token
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
@@ -22,7 +33,7 @@ use Illuminate\Notifications\Notifiable;
 #[Hidden(['password', 'remember_token'])]
 #[ObservedBy(UserObserver::class)]
 #[UseFactory(UserFactory::class)]
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     /** @use \Illuminate\Database\Eloquent\Factories\HasFactory<\Database\Factories\User\UserFactory> */
     use HasFactory, Notifiable;

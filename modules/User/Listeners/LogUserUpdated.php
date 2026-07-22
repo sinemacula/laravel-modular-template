@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Listeners;
 
 use App\User\Events\UserUpdated;
@@ -11,7 +13,7 @@ use Illuminate\Support\Facades\Log;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class LogUserUpdated
+final class LogUserUpdated
 {
     /**
      * Handle the event.

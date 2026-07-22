@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\User\Models;
 
 use App\User\Models\User;
@@ -20,7 +22,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(User::class)]
-class UserFeatureTest extends TestCase
+final class UserFeatureTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -51,8 +53,8 @@ class UserFeatureTest extends TestCase
             'password' => 'secret',
         ]);
 
-        static::assertNotSame('secret', $user->password);
-        static::assertTrue(Hash::check('secret', $user->password));
+        self::assertNotSame('secret', $user->password);
+        self::assertTrue(Hash::check('secret', $user->password));
     }
 
     /**
@@ -65,8 +67,8 @@ class UserFeatureTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->create();
 
-        static::assertNotNull($user->password);
-        static::assertArrayNotHasKey('password', $user->toArray());
+        self::assertNotNull($user->password);
+        self::assertArrayNotHasKey('password', $user->toArray());
     }
 
     /**
@@ -79,8 +81,8 @@ class UserFeatureTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->remembered()->create();
 
-        static::assertNotNull($user->remember_token);
-        static::assertArrayNotHasKey(
+        self::assertNotNull($user->remember_token);
+        self::assertArrayNotHasKey(
             'remember_token',
             $user->toArray(),
         );
@@ -96,7 +98,7 @@ class UserFeatureTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->verified()->create();
 
-        static::assertInstanceOf( // @phpstan-ignore staticMethod.impossibleType
+        self::assertInstanceOf( // @phpstan-ignore staticMethod.impossibleType
             Carbon::class,
             $user->email_verified_at,
         );
@@ -116,6 +118,6 @@ class UserFeatureTest extends TestCase
             'email_verified_at' => now(),
         ]);
 
-        static::assertNull($user->email_verified_at);
+        self::assertNull($user->email_verified_at);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\User\Http\Controllers;
 
 use App\User\Http\Controllers\UserController;
@@ -17,7 +19,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(UserController::class)]
-class UserControllerTest extends TestCase
+final class UserControllerTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
 {
     use RefreshDatabase;
 
@@ -70,7 +72,7 @@ class UserControllerTest extends TestCase
             ->assertJsonPath('data.name', $user->name)
             ->assertJsonPath('data.email', $user->email);
 
-        static::assertNotNull(
+        self::assertNotNull(
             $response->json('data.email_verified_at'),
         );
     }
@@ -133,8 +135,8 @@ class UserControllerTest extends TestCase
             ->assertJsonPath('data.name', self::UPDATED_NAME)
             ->assertJsonPath('data.email', self::UPDATED_EMAIL);
 
-        static::assertNotSame(self::ORIGINAL_NAME, $response->json('data.name'));
-        static::assertNotSame(self::ORIGINAL_EMAIL, $response->json('data.email'));
+        self::assertNotSame(self::ORIGINAL_NAME, $response->json('data.name'));
+        self::assertNotSame(self::ORIGINAL_EMAIL, $response->json('data.email'));
 
         $this->assertDatabaseHas('users', [
             'id'    => $user->id,
@@ -164,8 +166,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating another user's profile returns 403 and does not
-     * modify the target user.
+     * Test that updating another user's profile returns 403 and does not modify
+     * the target user.
      *
      * @return void
      */
@@ -191,8 +193,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that an authenticated user can delete their own account and it
-     * is removed from the database.
+     * Test that an authenticated user can delete their own account and it is
+     * removed from the database.
      *
      * @return void
      */
@@ -212,8 +214,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that deleting another user's account returns 403 and the target
-     * user remains in the database.
+     * Test that deleting another user's account returns 403 and the target user
+     * remains in the database.
      *
      * @return void
      */
@@ -287,8 +289,8 @@ class UserControllerTest extends TestCase
     }
 
     /**
-     * Test that updating with an empty body returns 200 and does not modify
-     * the user because all fields are 'sometimes'.
+     * Test that updating with an empty body returns 200 and does not modify the
+     * user because all fields are 'sometimes'.
      *
      * @return void
      */

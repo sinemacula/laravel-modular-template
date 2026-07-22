@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\User\Http\Resources;
 
 use App\User\Http\Resources\UserResource;
@@ -17,8 +19,9 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(UserResource::class)]
-class UserResourceTest extends TestCase
+final class UserResourceTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
 {
+    /** The request URI used when building the test request. */
     private const string TEST_URI = '/test';
 
     /**
@@ -39,13 +42,13 @@ class UserResourceTest extends TestCase
         $resource = new UserResource($user);
         $result   = $resource->toArray($request);
 
-        static::assertCount(6, $result);
-        static::assertArrayHasKey('id', $result);
-        static::assertArrayHasKey('name', $result);
-        static::assertArrayHasKey('email', $result);
-        static::assertArrayHasKey('email_verified_at', $result);
-        static::assertArrayHasKey('created_at', $result);
-        static::assertArrayHasKey('updated_at', $result);
+        self::assertCount(6, $result);
+        self::assertArrayHasKey('id', $result);
+        self::assertArrayHasKey('name', $result);
+        self::assertArrayHasKey('email', $result);
+        self::assertArrayHasKey('email_verified_at', $result);
+        self::assertArrayHasKey('created_at', $result);
+        self::assertArrayHasKey('updated_at', $result);
     }
 
     /**
@@ -55,7 +58,7 @@ class UserResourceTest extends TestCase
      */
     public function testToArrayReturnsCorrectValues(): void
     {
-        $user = User::factory()->make([
+        $user = User::factory()->makeOne([
             'id'    => 5,
             'name'  => 'John Smith',
             'email' => 'john@example.com',
@@ -65,9 +68,9 @@ class UserResourceTest extends TestCase
         $resource = new UserResource($user);
         $result   = $resource->toArray($request);
 
-        static::assertSame($user->id, $result['id']);
-        static::assertSame('John Smith', $result['name']);
-        static::assertSame('john@example.com', $result['email']);
+        self::assertSame($user->id, $result['id']);
+        self::assertSame('John Smith', $result['name']);
+        self::assertSame('john@example.com', $result['email']);
     }
 
     /**
@@ -87,8 +90,8 @@ class UserResourceTest extends TestCase
         $resource = new UserResource($user);
         $result   = $resource->toArray($request);
 
-        static::assertArrayNotHasKey('password', $result);
-        static::assertArrayNotHasKey('remember_token', $result);
+        self::assertArrayNotHasKey('password', $result);
+        self::assertArrayNotHasKey('remember_token', $result);
     }
 
     /**
@@ -107,6 +110,6 @@ class UserResourceTest extends TestCase
         $resource = new UserResource($user);
         $result   = $resource->toArray($request);
 
-        static::assertNull($result['email_verified_at']);
+        self::assertNull($result['email_verified_at']);
     }
 }

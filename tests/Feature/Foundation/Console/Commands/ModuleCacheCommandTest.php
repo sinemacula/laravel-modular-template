@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\Foundation\Console\Commands;
 
 use PHPUnit\Framework\Attributes\CoversNothing;
@@ -8,8 +10,8 @@ use Tests\TestCase;
 /**
  * Feature tests for the module cache and clear commands.
  *
- * These tests share a single file to prevent parallel runner race conditions
- * on the shared bootstrap/cache/modules.php file.
+ * These tests share a single file to prevent parallel runner race conditions on
+ * the shared bootstrap/cache/modules.php file.
  *
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
@@ -21,7 +23,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversNothing]
-class ModuleCacheCommandTest extends TestCase
+final class ModuleCacheCommandTest extends TestCase
 {
     /** @var string The path to the module cache file. */
     private string $cachePath = '';
@@ -85,13 +87,13 @@ class ModuleCacheCommandTest extends TestCase
     {
         $this->artisan('module:cache');
 
-        static::assertFileExists($this->cachePath);
+        self::assertFileExists($this->cachePath);
 
         $modules = require $this->cachePath;
 
-        static::assertIsArray($modules);
-        static::assertArrayHasKey('foundation', $modules);
-        static::assertArrayHasKey('user', $modules);
+        self::assertIsArray($modules);
+        self::assertArrayHasKey('foundation', $modules);
+        self::assertArrayHasKey('user', $modules);
     }
 
     /**
@@ -125,10 +127,10 @@ class ModuleCacheCommandTest extends TestCase
     public function testCacheFileRemovedFromDisk(): void
     {
         $this->artisan('module:cache');
-        static::assertFileExists($this->cachePath);
+        self::assertFileExists($this->cachePath);
 
         $this->artisan('module:clear');
-        static::assertFileDoesNotExist($this->cachePath);
+        self::assertFileDoesNotExist($this->cachePath);
     }
 
     /**
@@ -138,7 +140,7 @@ class ModuleCacheCommandTest extends TestCase
      */
     public function testClearCommandSucceedsWithoutExistingCache(): void
     {
-        static::assertFileDoesNotExist($this->cachePath);
+        self::assertFileDoesNotExist($this->cachePath);
 
         $this->artisan('module:clear')
             ->assertExitCode(0); // @phpstan-ignore method.nonObject
@@ -151,8 +153,10 @@ class ModuleCacheCommandTest extends TestCase
      */
     private function cleanUp(): void
     {
-        if (file_exists($this->cachePath)) {
-            unlink($this->cachePath);
+        if (!file_exists($this->cachePath)) {
+            return;
         }
+
+        unlink($this->cachePath);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Http\Resources;
 
 use Illuminate\Http\Request;
@@ -13,7 +15,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class UserResource extends JsonResource
+final class UserResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

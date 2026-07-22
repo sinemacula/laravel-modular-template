@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\User\Observers;
 
 use App\User\Events\UserUpdated;
@@ -18,7 +20,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(UserObserver::class)]
-class UserObserverTest extends TestCase
+final class UserObserverTest extends TestCase
 {
     /**
      * Test that the updated method dispatches a UserUpdated event.

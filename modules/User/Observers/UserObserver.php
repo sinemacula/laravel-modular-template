@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Observers;
 
 use App\User\Events\UserUpdated;
@@ -11,7 +13,7 @@ use App\User\Models\User;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class UserObserver
+final class UserObserver
 {
     /**
      * Handle the User "updated" event.
@@ -21,6 +23,6 @@ class UserObserver
      */
     public function updated(User $user): void
     {
-        UserUpdated::dispatch($user);
+        event(new UserUpdated($user));
     }
 }

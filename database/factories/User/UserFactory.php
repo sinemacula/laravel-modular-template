@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Database\Factories\User;
 
-use App\User\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -14,8 +15,10 @@ use Illuminate\Support\Str;
  *
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
+ *
+ * @managed-static
  */
-class UserFactory extends Factory
+final class UserFactory extends Factory
 {
     /** @var string|null Cached hashed password to avoid repeated bcrypt calls. */
     protected static ?string $password = null;
@@ -31,7 +34,7 @@ class UserFactory extends Factory
         return [
             'name'     => $this->faker->name(),
             'email'    => $this->faker->unique()->safeEmail(),
-            'password' => static::$password ??= Hash::make('password'),
+            'password' => self::$password ??= Hash::make('password'),
         ];
     }
 

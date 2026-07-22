@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\User\Models;
 
 use App\User\Models\User;
@@ -23,7 +25,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(User::class)]
-class UserTest extends TestCase
+final class UserTest extends TestCase
 {
     /**
      * Test that the Fillable attribute contains the expected fields.
@@ -35,11 +37,11 @@ class UserTest extends TestCase
         $reflection = new \ReflectionClass(User::class);
         $attributes = $reflection->getAttributes(Fillable::class);
 
-        static::assertCount(1, $attributes);
+        self::assertCount(1, $attributes);
 
         $fillable = $attributes[0]->newInstance();
 
-        static::assertSame(
+        self::assertSame(
             ['name', 'email', 'password'],
             $fillable->columns,
         );
@@ -55,11 +57,11 @@ class UserTest extends TestCase
         $reflection = new \ReflectionClass(User::class);
         $attributes = $reflection->getAttributes(Hidden::class);
 
-        static::assertCount(1, $attributes);
+        self::assertCount(1, $attributes);
 
         $hidden = $attributes[0]->newInstance();
 
-        static::assertSame(
+        self::assertSame(
             ['password', 'remember_token'],
             $hidden->columns,
         );
@@ -74,8 +76,8 @@ class UserTest extends TestCase
     {
         $casts = $this->invokeCasts();
 
-        static::assertArrayHasKey('email_verified_at', $casts);
-        static::assertSame('datetime', $casts['email_verified_at']);
+        self::assertArrayHasKey('email_verified_at', $casts);
+        self::assertSame('datetime', $casts['email_verified_at']);
     }
 
     /**
@@ -87,8 +89,8 @@ class UserTest extends TestCase
     {
         $casts = $this->invokeCasts();
 
-        static::assertArrayHasKey('password', $casts);
-        static::assertSame('hashed', $casts['password']);
+        self::assertArrayHasKey('password', $casts);
+        self::assertSame('hashed', $casts['password']);
     }
 
     /**
@@ -100,7 +102,7 @@ class UserTest extends TestCase
     {
         $casts = $this->invokeCasts();
 
-        static::assertCount(2, $casts);
+        self::assertCount(2, $casts);
     }
 
     /**
@@ -113,11 +115,11 @@ class UserTest extends TestCase
         $reflection = new \ReflectionClass(User::class);
         $attributes = $reflection->getAttributes(UseFactory::class);
 
-        static::assertCount(1, $attributes);
+        self::assertCount(1, $attributes);
 
         $factory = $attributes[0]->newInstance();
 
-        static::assertSame(
+        self::assertSame(
             UserFactory::class,
             $factory->factoryClass,
         );
@@ -130,7 +132,7 @@ class UserTest extends TestCase
      */
     public function testUsesHasFactoryTrait(): void
     {
-        static::assertContains(
+        self::assertContains(
             HasFactory::class,
             class_uses_recursive(User::class),
         );
@@ -143,7 +145,7 @@ class UserTest extends TestCase
      */
     public function testUsesNotifiableTrait(): void
     {
-        static::assertContains(
+        self::assertContains(
             Notifiable::class,
             class_uses_recursive(User::class),
         );

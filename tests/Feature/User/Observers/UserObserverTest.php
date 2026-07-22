@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\User\Observers;
 
 use App\User\Events\UserUpdated;
@@ -19,7 +21,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(UserObserver::class)]
-class UserObserverTest extends TestCase
+final class UserObserverTest extends TestCase
 {
     use RefreshDatabase;
 
