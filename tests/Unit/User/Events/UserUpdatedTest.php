@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\User\Events;
 
 use App\User\Events\UserUpdated;
 use App\User\Models\User;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -18,7 +19,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(UserUpdated::class)]
-class UserUpdatedTest extends TestCase
+final class UserUpdatedTest extends TestCase
 {
     /**
      * Test that the event can be constructed with a User instance.
@@ -30,12 +31,12 @@ class UserUpdatedTest extends TestCase
         $user  = new User;
         $event = new UserUpdated($user);
 
-        static::assertInstanceOf(UserUpdated::class, $event);
+        self::assertInstanceOf(UserUpdated::class, $event);
     }
 
     /**
-     * Test that the user property is accessible and contains the correct
-     * User instance.
+     * Test that the user property is accessible and contains the correct User
+     * instance.
      *
      * @return void
      */
@@ -44,7 +45,7 @@ class UserUpdatedTest extends TestCase
         $user  = new User;
         $event = new UserUpdated($user);
 
-        static::assertSame($user, $event->user);
+        self::assertSame($user, $event->user);
     }
 
     /**
@@ -56,20 +57,7 @@ class UserUpdatedTest extends TestCase
     {
         $reflection = new \ReflectionProperty(UserUpdated::class, 'user');
 
-        static::assertTrue($reflection->isReadOnly());
-    }
-
-    /**
-     * Test that the event uses the Dispatchable trait.
-     *
-     * @return void
-     */
-    public function testUsesDispatchableTrait(): void
-    {
-        static::assertContains(
-            Dispatchable::class,
-            class_uses_recursive(UserUpdated::class),
-        );
+        self::assertTrue($reflection->isReadOnly());
     }
 
     /**
@@ -79,7 +67,7 @@ class UserUpdatedTest extends TestCase
      */
     public function testUsesSerializesModelsTrait(): void
     {
-        static::assertContains(
+        self::assertContains(
             SerializesModels::class,
             class_uses_recursive(UserUpdated::class),
         );

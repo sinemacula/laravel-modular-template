@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Events;
 
 use App\User\Models\User;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
 /**
@@ -12,9 +13,9 @@ use Illuminate\Queue\SerializesModels;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class UserUpdated
+final class UserUpdated
 {
-    use Dispatchable, SerializesModels;
+    use SerializesModels;
 
     /**
      * Create a new event instance.
@@ -26,6 +27,5 @@ class UserUpdated
 
         /** The user that was updated. */
         public readonly User $user,
-
     ) {}
 }
