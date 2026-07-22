@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\Foundation\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -17,7 +19,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversNothing]
-class ModuleServiceProviderFeatureTest extends TestCase
+final class ModuleServiceProviderFeatureTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
 {
     /**
      * Test that the module:cache and module:clear commands are registered.
@@ -41,12 +43,12 @@ class ModuleServiceProviderFeatureTest extends TestCase
      */
     public function testModuleCacheCommandInOptimizeList(): void
     {
-        static::assertArrayHasKey(
+        self::assertArrayHasKey(
             'modules',
             ServiceProvider::$optimizeCommands,
         );
 
-        static::assertSame(
+        self::assertSame(
             'module:cache',
             ServiceProvider::$optimizeCommands['modules'],
         );

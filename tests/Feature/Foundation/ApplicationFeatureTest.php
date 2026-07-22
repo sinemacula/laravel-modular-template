@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\Foundation;
 
 use PHPUnit\Framework\Attributes\CoversNothing;
@@ -15,7 +17,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversNothing]
-class ApplicationFeatureTest extends TestCase
+final class ApplicationFeatureTest extends TestCase
 {
     /**
      * Test that the application boots with the modular architecture.
@@ -24,7 +26,7 @@ class ApplicationFeatureTest extends TestCase
      */
     public function testApplicationBootsWithModularArchitecture(): void
     {
-        static::assertInstanceOf(Application::class, app());
+        self::assertInstanceOf(Application::class, app());
     }
 
     /**
@@ -45,7 +47,7 @@ class ApplicationFeatureTest extends TestCase
      */
     public function testApplicationPathReturnsModulesDirectory(): void
     {
-        static::assertStringEndsWith(
+        self::assertStringEndsWith(
             DIRECTORY_SEPARATOR . 'modules',
             app()->path(),
         );
@@ -58,7 +60,7 @@ class ApplicationFeatureTest extends TestCase
      */
     public function testApplicationPathAppendsSubpath(): void
     {
-        static::assertStringEndsWith(
+        self::assertStringEndsWith(
             DIRECTORY_SEPARATOR . 'modules'
                 . DIRECTORY_SEPARATOR . 'Foundation',
             app()->path('Foundation'),
@@ -75,8 +77,8 @@ class ApplicationFeatureTest extends TestCase
     {
         $path = app()->resourcePath();
 
-        static::assertIsString($path);
-        static::assertStringEndsWith('resources', $path);
+        self::assertIsString($path);
+        self::assertStringEndsWith('resources', $path);
     }
 
     /**
@@ -89,6 +91,6 @@ class ApplicationFeatureTest extends TestCase
     {
         $path = app()->resourcePath('foundation::views');
 
-        static::assertStringNotContainsString('::', $path);
+        self::assertStringNotContainsString('::', $path);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\User\Policies;
 
 use App\User\Models\User;
@@ -16,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(UserPolicy::class)]
-class UserPolicyTest extends TestCase
+final class UserPolicyTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
 {
     /** @var \App\User\Policies\UserPolicy */
     private UserPolicy $policy;
@@ -26,6 +28,7 @@ class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -44,12 +47,12 @@ class UserPolicyTest extends TestCase
         $user     = new User;
         $user->id = 1;
 
-        static::assertTrue($this->policy->view($user, $user));
+        self::assertTrue($this->policy->view($user, $user));
     }
 
     /**
-     * Test that view returns false when the authenticated user differs from
-     * the target user.
+     * Test that view returns false when the authenticated user differs from the
+     * target user.
      *
      * @return void
      */
@@ -61,7 +64,7 @@ class UserPolicyTest extends TestCase
         $target     = new User;
         $target->id = 2;
 
-        static::assertFalse($this->policy->view($auth, $target));
+        self::assertFalse($this->policy->view($auth, $target));
     }
 
     /**
@@ -75,7 +78,7 @@ class UserPolicyTest extends TestCase
         $user     = new User;
         $user->id = 1;
 
-        static::assertTrue($this->policy->update($user, $user));
+        self::assertTrue($this->policy->update($user, $user));
     }
 
     /**
@@ -92,7 +95,7 @@ class UserPolicyTest extends TestCase
         $target     = new User;
         $target->id = 2;
 
-        static::assertFalse($this->policy->update($auth, $target));
+        self::assertFalse($this->policy->update($auth, $target));
     }
 
     /**
@@ -106,7 +109,7 @@ class UserPolicyTest extends TestCase
         $user     = new User;
         $user->id = 1;
 
-        static::assertTrue($this->policy->delete($user, $user));
+        self::assertTrue($this->policy->delete($user, $user));
     }
 
     /**
@@ -123,6 +126,6 @@ class UserPolicyTest extends TestCase
         $target     = new User;
         $target->id = 2;
 
-        static::assertFalse($this->policy->delete($auth, $target));
+        self::assertFalse($this->policy->delete($auth, $target));
     }
 }

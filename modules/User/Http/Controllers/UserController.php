@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Http\Controllers;
 
 use App\User\Http\Requests\UpdateUserRequest;
@@ -15,7 +17,7 @@ use Illuminate\Routing\Controller;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class UserController extends Controller
+final class UserController extends Controller
 {
     use AuthorizesRequests;
 

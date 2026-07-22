@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\Database\Seeders;
 
 use Database\Seeders\DatabaseSeeder;
@@ -18,7 +20,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(DatabaseSeeder::class)]
-class DatabaseSeederTest extends TestCase
+final class DatabaseSeederTest extends TestCase
 {
     use RefreshDatabase;
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\Foundation;
 
 use App\Foundation\Providers\AppServiceProvider;
@@ -8,8 +10,10 @@ use App\User\Models\User;
 use App\User\Policies\UserPolicy;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\CoversNothing;
 use SineMacula\Laravel\Modules\Providers\ModuleServiceProvider;
 use Tests\TestCase;
@@ -24,33 +28,32 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversNothing]
-class ModuleDiscoveryTest extends TestCase
+final class ModuleDiscoveryTest extends TestCase
 {
     use RefreshDatabase;
 
     /**
      * Test that module routes are registered for the User resource.
      *
-     * Inspects the router directly to verify that GET, PUT, and DELETE
-     * routes for /users/{user} exist and point to the correct UserController
-     * methods.
+     * Inspects the router directly to verify that GET, PUT, and DELETE routes
+     * for /users/{user} exist and point to the correct UserController methods.
      *
      * @return void
      */
     public function testModuleRoutesAreRegistered(): void
     {
-        $routes = app('router')->getRoutes();
+        $routes = Route::getRoutes();
 
         $show    = $routes->getByName('users.show');
         $update  = $routes->getByName('users.update');
         $destroy = $routes->getByName('users.destroy');
 
-        static::assertNotNull($show);
-        static::assertNotNull($update);
-        static::assertNotNull($destroy);
-        static::assertStringContainsString('UserController@show', $show->getActionName());
-        static::assertStringContainsString('UserController@update', $update->getActionName());
-        static::assertStringContainsString('UserController@destroy', $destroy->getActionName());
+        self::assertNotNull($show);
+        self::assertNotNull($update);
+        self::assertNotNull($destroy);
+        self::assertStringContainsString('UserController@show', $show->getActionName());
+        self::assertStringContainsString('UserController@update', $update->getActionName());
+        self::assertStringContainsString('UserController@destroy', $destroy->getActionName());
     }
 
     /**
@@ -60,15 +63,15 @@ class ModuleDiscoveryTest extends TestCase
      */
     public function testModuleRoutesHaveAuthMiddleware(): void
     {
-        $routes = app('router')->getRoutes();
+        $routes = Route::getRoutes();
 
         $show    = $routes->getByName('users.show');
         $update  = $routes->getByName('users.update');
         $destroy = $routes->getByName('users.destroy');
 
-        static::assertContains('auth', $show->middleware()); // @phpstan-ignore method.nonObject
-        static::assertContains('auth', $update->middleware()); // @phpstan-ignore method.nonObject
-        static::assertContains('auth', $destroy->middleware()); // @phpstan-ignore method.nonObject
+        self::assertContains('auth', $show->middleware()); // @phpstan-ignore method.nonObject
+        self::assertContains('auth', $update->middleware()); // @phpstan-ignore method.nonObject
+        self::assertContains('auth', $destroy->middleware()); // @phpstan-ignore method.nonObject
     }
 
     /**
@@ -81,9 +84,9 @@ class ModuleDiscoveryTest extends TestCase
     {
         Log::spy();
 
-        $user = User::factory()->create();
+        $user = User::factory()->createOne();
 
-        app('events')->dispatch(new UserUpdated($user));
+        Event::dispatch(new UserUpdated($user));
 
         Log::shouldHaveReceived('info') // @phpstan-ignore staticMethod.notFound
             ->withArgs(fn (string $message, array $context): bool => $message === 'User updated'
@@ -100,12 +103,12 @@ class ModuleDiscoveryTest extends TestCase
     {
         $policy = Gate::getPolicyFor(User::class);
 
-        static::assertInstanceOf(UserPolicy::class, $policy);
+        self::assertInstanceOf(UserPolicy::class, $policy);
     }
 
     /**
-     * Test that the observer registered via the ObservedBy attribute fires
-     * the full chain: Observer dispatches UserUpdated, which triggers
+     * Test that the observer registered via the ObservedBy attribute fires the
+     * full chain: Observer dispatches UserUpdated, which triggers
      * LogUserUpdated, which writes to the log.
      *
      * @return void
@@ -114,7 +117,7 @@ class ModuleDiscoveryTest extends TestCase
     {
         Log::spy();
 
-        $user = User::factory()->create();
+        $user = User::factory()->createOne();
 
         $user->update(['name' => 'Updated Name']);
 
@@ -133,8 +136,8 @@ class ModuleDiscoveryTest extends TestCase
     {
         $commands = Artisan::all();
 
-        static::assertArrayHasKey('module:cache', $commands);
-        static::assertArrayHasKey('module:clear', $commands);
+        self::assertArrayHasKey('module:cache', $commands);
+        self::assertArrayHasKey('module:clear', $commands);
     }
 
     /**
@@ -147,7 +150,7 @@ class ModuleDiscoveryTest extends TestCase
     {
         $providers = app()->getLoadedProviders();
 
-        static::assertArrayHasKey(ModuleServiceProvider::class, $providers);
-        static::assertArrayHasKey(AppServiceProvider::class, $providers);
+        self::assertArrayHasKey(ModuleServiceProvider::class, $providers);
+        self::assertArrayHasKey(AppServiceProvider::class, $providers);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\Foundation\Providers;
 
 use App\Foundation\Providers\AppServiceProvider;
@@ -22,7 +24,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(AppServiceProvider::class)]
-class AppServiceProviderTest extends TestCase
+final class AppServiceProviderTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
 {
     use MockeryPHPUnitIntegration;
 
@@ -31,6 +33,7 @@ class AppServiceProviderTest extends TestCase
      *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,6 +46,7 @@ class AppServiceProviderTest extends TestCase
      *
      * @return void
      */
+    #[\Override]
     protected function tearDown(): void
     {
         Facade::clearResolvedInstances();
@@ -74,8 +78,8 @@ class AppServiceProviderTest extends TestCase
     }
 
     /**
-     * Test that parallel testing registration is skipped when the application is
-     * not in the testing environment.
+     * Test that parallel testing registration is skipped when the application
+     * is not in the testing environment.
      *
      * @return void
      */
@@ -110,7 +114,7 @@ class AppServiceProviderTest extends TestCase
         $parallelTesting = \Mockery::mock();
         $parallelTesting->shouldReceive('setUpTestDatabase')
             ->once() // @phpstan-ignore method.notFound
-            ->with(\Mockery::on(function ($callback) use (&$capturedCallback) {
+            ->with(\Mockery::on(function ($callback) use (&$capturedCallback): bool {
                 $capturedCallback = $callback;
 
                 return true;
@@ -120,7 +124,7 @@ class AppServiceProviderTest extends TestCase
 
         $provider->boot();
 
-        static::assertNotNull($capturedCallback);
+        self::assertNotNull($capturedCallback);
 
         /** @var \Mockery\MockInterface $artisan */
         $artisan = \Mockery::mock();

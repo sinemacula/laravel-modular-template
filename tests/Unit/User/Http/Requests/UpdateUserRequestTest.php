@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Unit\User\Http\Requests;
 
 use App\User\Http\Requests\UpdateUserRequest;
+use Illuminate\Validation\Rules\Unique;
 use PHPUnit\Framework\Attributes\CoversClass;
 use Tests\TestCase;
 
@@ -13,9 +16,11 @@ use Tests\TestCase;
  * @copyright   2026 Sine Macula Limited
  *
  * @internal
+ *
+ * @phpstan-ignore sineMaculaLaravel.formRequestRules
  */
 #[CoversClass(UpdateUserRequest::class)]
-class UpdateUserRequestTest extends TestCase
+final class UpdateUserRequestTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
 {
     /**
      * Test that the rules method returns the expected validation keys.
@@ -28,9 +33,9 @@ class UpdateUserRequestTest extends TestCase
 
         $rules = $request->rules();
 
-        static::assertArrayHasKey('name', $rules);
-        static::assertArrayHasKey('email', $rules);
-        static::assertCount(2, $rules);
+        self::assertArrayHasKey('name', $rules);
+        self::assertArrayHasKey('email', $rules);
+        self::assertCount(2, $rules);
     }
 
     /**
@@ -44,9 +49,9 @@ class UpdateUserRequestTest extends TestCase
 
         $rules = $request->rules();
 
-        static::assertContains('sometimes', $rules['name']);
-        static::assertContains('string', $rules['name']);
-        static::assertContains('max:255', $rules['name']);
+        self::assertContains('sometimes', $rules['name']);
+        self::assertContains('string', $rules['name']);
+        self::assertContains('max:255', $rules['name']);
     }
 
     /**
@@ -60,10 +65,10 @@ class UpdateUserRequestTest extends TestCase
 
         $rules = $request->rules();
 
-        static::assertContains('sometimes', $rules['email']);
-        static::assertContains('string', $rules['email']);
-        static::assertContains('email', $rules['email']);
-        static::assertContains('max:255', $rules['email']);
+        self::assertContains('sometimes', $rules['email']);
+        self::assertContains('string', $rules['email']);
+        self::assertContains('email', $rules['email']);
+        self::assertContains('max:255', $rules['email']);
     }
 
     /**
@@ -79,15 +84,15 @@ class UpdateUserRequestTest extends TestCase
 
         $hasUnique = false;
 
-        foreach ((array) $rules['email'] as $rule) {
-            if ($rule instanceof \Illuminate\Validation\Rules\Unique) {
+        foreach ($rules['email'] as $rule) {
+            if ($rule instanceof Unique) {
                 $hasUnique = true;
 
                 break;
             }
         }
 
-        static::assertTrue(
+        self::assertTrue(
             $hasUnique,
             'Expected the email rules to contain a Unique rule instance.',
         );

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Database\Seeders;
 
 use App\User\Models\User;
@@ -8,8 +10,11 @@ use Illuminate\Database\Seeder;
 
 /**
  * Database seeder.
+ *
+ * @author      Ben Carey <bdmc@sinemacula.co.uk>
+ * @copyright   2026 Sine Macula Limited
  */
-class DatabaseSeeder extends Seeder
+final class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
 

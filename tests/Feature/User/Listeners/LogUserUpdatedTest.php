@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Tests\Feature\User\Listeners;
 
 use App\User\Events\UserUpdated;
@@ -19,7 +21,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(LogUserUpdated::class)]
-class LogUserUpdatedTest extends TestCase
+final class LogUserUpdatedTest extends TestCase
 {
     use RefreshDatabase;
 

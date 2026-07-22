@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\User\Policies;
 
 use App\User\Models\User;
@@ -10,7 +12,7 @@ use App\User\Models\User;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class UserPolicy
+final class UserPolicy
 {
     /**
      * Determine whether the user can view the model.
@@ -18,6 +20,8 @@ class UserPolicy
      * @param  \App\User\Models\User  $auth
      * @param  \App\User\Models\User  $user
      * @return bool
+     *
+     * @imperative
      */
     public function view(User $auth, User $user): bool
     {
@@ -30,6 +34,8 @@ class UserPolicy
      * @param  \App\User\Models\User  $auth
      * @param  \App\User\Models\User  $user
      * @return bool
+     *
+     * @imperative
      */
     public function update(User $auth, User $user): bool
     {

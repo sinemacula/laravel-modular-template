@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Foundation\Providers;
 
 use Illuminate\Support\Facades\Artisan;
@@ -12,7 +14,7 @@ use Illuminate\Support\ServiceProvider;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-class AppServiceProvider extends ServiceProvider
+final class AppServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
