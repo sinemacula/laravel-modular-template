@@ -18,7 +18,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(UserPolicy::class)]
-final class UserPolicyTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
+final class UserPolicyTest extends TestCase
 {
     /** @var \App\User\Policies\UserPolicy */
     private UserPolicy $policy;

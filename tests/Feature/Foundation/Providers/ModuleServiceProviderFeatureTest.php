@@ -19,7 +19,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversNothing]
-final class ModuleServiceProviderFeatureTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
+final class ModuleServiceProviderFeatureTest extends TestCase
 {
     /**
      * Test that the module:cache and module:clear commands are registered.

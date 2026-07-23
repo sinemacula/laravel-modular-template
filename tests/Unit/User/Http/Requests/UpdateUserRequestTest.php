@@ -16,11 +16,9 @@ use Tests\TestCase;
  * @copyright   2026 Sine Macula Limited
  *
  * @internal
- *
- * @phpstan-ignore sineMaculaLaravel.formRequestRules
  */
 #[CoversClass(UpdateUserRequest::class)]
-final class UpdateUserRequestTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
+final class UpdateUserRequestTest extends TestCase
 {
     /**
      * Test that the rules method returns the expected validation keys.

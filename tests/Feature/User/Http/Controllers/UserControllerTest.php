@@ -19,7 +19,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(UserController::class)]
-final class UserControllerTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
+final class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
 
