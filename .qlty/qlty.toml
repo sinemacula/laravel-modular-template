@@ -141,6 +141,10 @@ name = "trufflehog"
 [[plugin]]
 name = "yamllint"
 
+# The sandbox install ignores platform requirements, so without the symfony
+# conflict caps in the package file it floats onto symfony 8 (PHP 8.4-only
+# syntax), which the PHP 8.3 runner cannot parse. Drop the caps once the runner
+# ships PHP 8.4.
 [[plugin]]
 name = "phpstan"
 version = "2.1.38"
