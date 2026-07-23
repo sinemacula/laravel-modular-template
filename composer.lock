@@ -10301,16 +10301,16 @@
         },
         {
             "name": "sinemacula/coding-standards-laravel",
-            "version": "v1.3.1",
+            "version": "v1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/coding-standards-laravel.git",
-                "reference": "c1436746cd3c3db0647b127e49e34fa915c5acce"
+                "reference": "0032881d1992676694f861c01af55a6ad7c81bcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/coding-standards-laravel/zipball/c1436746cd3c3db0647b127e49e34fa915c5acce",
-                "reference": "c1436746cd3c3db0647b127e49e34fa915c5acce",
+                "url": "https://api.github.com/repos/sinemacula/coding-standards-laravel/zipball/0032881d1992676694f861c01af55a6ad7c81bcf",
+                "reference": "0032881d1992676694f861c01af55a6ad7c81bcf",
                 "shasum": ""
             },
             "require": {
@@ -10360,9 +10360,9 @@
             "description": "Laravel-specific coding standards, static-analysis rules, and code-quality tooling for Sine Macula's Laravel repositories.",
             "support": {
                 "issues": "https://github.com/sinemacula/coding-standards-laravel/issues",
-                "source": "https://github.com/sinemacula/coding-standards-laravel/tree/v1.3.1"
+                "source": "https://github.com/sinemacula/coding-standards-laravel/tree/v1.3.2"
             },
-            "time": "2026-07-22T18:14:46+00:00"
+            "time": "2026-07-22T23:42:46+00:00"
         },
         {
             "name": "slevomat/coding-standard",
