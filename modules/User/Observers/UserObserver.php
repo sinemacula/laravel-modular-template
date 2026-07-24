@@ -23,6 +23,6 @@ final class UserObserver
      */
     public function updated(User $user): void
     {
-        event(new UserUpdated($user));
+        UserUpdated::dispatch($user);
     }
 }

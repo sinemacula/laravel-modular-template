@@ -24,7 +24,7 @@ use PHPUnit\Framework\TestCase;
  * @internal
  */
 #[CoversClass(AppServiceProvider::class)]
-final class AppServiceProviderTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
+final class AppServiceProviderTest extends TestCase
 {
     use MockeryPHPUnitIntegration;
 

@@ -6,6 +6,7 @@ namespace Tests\Unit\User\Events;
 
 use App\User\Events\UserUpdated;
 use App\User\Models\User;
+use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
@@ -58,6 +59,19 @@ final class UserUpdatedTest extends TestCase
         $reflection = new \ReflectionProperty(UserUpdated::class, 'user');
 
         self::assertTrue($reflection->isReadOnly());
+    }
+
+    /**
+     * Test that the event uses the Dispatchable trait.
+     *
+     * @return void
+     */
+    public function testUsesDispatchableTrait(): void
+    {
+        self::assertContains(
+            Dispatchable::class,
+            class_uses_recursive(UserUpdated::class),
+        );
     }
 
     /**

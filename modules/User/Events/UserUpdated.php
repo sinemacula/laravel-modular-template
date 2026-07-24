@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace App\User\Events;
 
 use App\User\Models\User;
+use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
 /**
@@ -15,7 +16,7 @@ use Illuminate\Queue\SerializesModels;
  */
 final class UserUpdated
 {
-    use SerializesModels;
+    use Dispatchable, SerializesModels;
 
     /**
      * Create a new event instance.

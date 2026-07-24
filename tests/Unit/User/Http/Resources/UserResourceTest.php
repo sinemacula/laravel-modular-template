@@ -19,7 +19,7 @@ use Tests\TestCase;
  * @internal
  */
 #[CoversClass(UserResource::class)]
-final class UserResourceTest extends TestCase // phpcs:ignore SineMaculaLaravel.Structure.RequireRoleNaming -- mirrors the module namespace
+final class UserResourceTest extends TestCase
 {
     /** The request URI used when building the test request. */
     private const string TEST_URI = '/test';
