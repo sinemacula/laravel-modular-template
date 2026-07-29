@@ -150,3 +150,13 @@ name = "phpstan"
 version = "2.1.38"
 package_file = ".qlty/configs/composer.json"
 package_filters = ["phpstan", "larastan", "sinemacula"]
+
+# larastan boots the application to resolve framework symbols, so the project's
+# own dependencies must be installed; the analysis runs against a bare checkout
+# with no vendor directory. COMPOSER_VENDOR_DIR is pinned to the repository's
+# own vendor because the plugin environment points it at the phpstan tool
+# sandbox, and installing there evicts phpstan/extension-installer (not part of
+# this project's manifest), which silently disables larastan. Ignore only the
+# extension requirements so the PHP version constraint is still enforced.
+[plugins.definitions.phpstan.drivers.lint]
+prepare_script = "COMPOSER_VENDOR_DIR=vendor ~/.qlty/cache/tools/composer/generic-42cc848a9f5e/composer.phar install --no-scripts --ignore-platform-req='ext-*'"
