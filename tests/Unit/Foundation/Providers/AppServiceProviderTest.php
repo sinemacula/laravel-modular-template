@@ -6,12 +6,13 @@ namespace Tests\Unit\Foundation\Providers;
 
 use App\Foundation\Providers\AppServiceProvider;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Foundation\Testing\Attributes\UnitTest;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Support\Facades\ParallelTesting;
 use Mockery\Adapter\Phpunit\MockeryPHPUnitIntegration;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 /**
  * Unit tests for the AppServiceProvider class.
@@ -61,6 +62,7 @@ final class AppServiceProviderTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testRegistersParallelTestingInTestingEnvironment(): void
     {
         $app      = $this->createMockApplication('testing');
@@ -83,6 +85,7 @@ final class AppServiceProviderTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testSkipsRegistrationInNonTestingEnvironment(): void
     {
         $app      = $this->createMockApplication('production');
@@ -103,6 +106,7 @@ final class AppServiceProviderTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testCallbackCallsDbSeed(): void
     {
         $app      = $this->createMockApplication('testing');
