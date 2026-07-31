@@ -41,6 +41,27 @@ final class ApplicationFeatureTest extends TestCase
     }
 
     /**
+     * Test that an unhandled exception renders as JSON even when the client
+     * asks for HTML.
+     *
+     * Every route is an API route, so a browser-shaped Accept header must not
+     * be able to elicit an HTML error page.
+     *
+     * @return void
+     */
+    public function testExceptionsRenderAsJsonForNonJsonClients(): void
+    {
+        $response = $this->get('/no-such-route', ['Accept' => 'text/html']);
+
+        $response->assertStatus(404);
+
+        self::assertStringContainsString(
+            'application/json',
+            (string) $response->headers->get('Content-Type'),
+        );
+    }
+
+    /**
      * Test that the application path returns the modules directory.
      *
      * @return void

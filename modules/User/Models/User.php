@@ -4,12 +4,16 @@ declare(strict_types = 1);
 
 namespace App\User\Models;
 
+use App\User\Http\Resources\UserResource;
 use App\User\Observers\UserObserver;
+use App\User\Policies\UserPolicy;
 use Database\Factories\User\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 use Illuminate\Database\Eloquent\Attributes\UseFactory;
+use Illuminate\Database\Eloquent\Attributes\UsePolicy;
+use Illuminate\Database\Eloquent\Attributes\UseResource;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -33,6 +37,8 @@ use Illuminate\Notifications\Notifiable;
 #[Hidden(['password', 'remember_token'])]
 #[ObservedBy(UserObserver::class)]
 #[UseFactory(UserFactory::class)]
+#[UsePolicy(UserPolicy::class)]
+#[UseResource(UserResource::class)]
 final class User extends Authenticatable
 {
     /** @use \Illuminate\Database\Eloquent\Factories\HasFactory<\Database\Factories\User\UserFactory> */

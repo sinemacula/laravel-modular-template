@@ -5,11 +5,10 @@ declare(strict_types = 1);
 namespace App\User\Http\Controllers;
 
 use App\User\Http\Requests\UpdateUserRequest;
-use App\User\Http\Resources\UserResource;
 use App\User\Models\User;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Routing\Controller;
+use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Routing\Attributes\Controllers\Authorize;
 
 /**
  * Handle user profile operations.
@@ -17,29 +16,18 @@ use Illuminate\Routing\Controller;
  * @author      Ben Carey <bdmc@sinemacula.co.uk>
  * @copyright   2026 Sine Macula Limited
  */
-final class UserController extends Controller
+final class UserController
 {
-    use AuthorizesRequests;
-
-    /**
-     * Automatically authorize resource actions against UserPolicy.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->authorizeResource(User::class, 'user');
-    }
-
     /**
      * Display the specified user.
      *
      * @param  \App\User\Models\User  $user
-     * @return \App\User\Http\Resources\UserResource
+     * @return \Illuminate\Http\Resources\Json\JsonResource
      */
-    public function show(User $user): UserResource
+    #[Authorize('view', 'user')]
+    public function show(User $user): JsonResource
     {
-        return new UserResource($user);
+        return $user->toResource();
     }
 
     /**
@@ -47,13 +35,14 @@ final class UserController extends Controller
      *
      * @param  \App\User\Http\Requests\UpdateUserRequest  $request
      * @param  \App\User\Models\User  $user
-     * @return \App\User\Http\Resources\UserResource
+     * @return \Illuminate\Http\Resources\Json\JsonResource
      */
-    public function update(UpdateUserRequest $request, User $user): UserResource
+    #[Authorize('update', 'user')]
+    public function update(UpdateUserRequest $request, User $user): JsonResource
     {
         $user->update($request->validated());
 
-        return new UserResource($user);
+        return $user->toResource();
     }
 
     /**
@@ -62,6 +51,7 @@ final class UserController extends Controller
      * @param  \App\User\Models\User  $user
      * @return \Illuminate\Http\JsonResponse
      */
+    #[Authorize('delete', 'user')]
     public function destroy(User $user): JsonResponse
     {
         $user->delete();
