@@ -23,17 +23,6 @@
     },
     timeout: 15,
     mutators: {
-        "@default": true,
-        // Equivalent mutants. Illuminate\Routing\Controller::callAction invokes
-        // the action as $this->{$method}(), from inside the class, so a
-        // protected action dispatches identically to a public one. Verified by
-        // making an action protected and watching the full controller suite
-        // still pass. Killing these would mean reflection-asserting visibility,
-        // which tests the declaration rather than the behaviour.
-        PublicVisibility: {
-            ignore: [
-                "App\\User\\Http\\Controllers\\UserController::*"
-            ]
-        }
+        "@default": true
     }
 }
