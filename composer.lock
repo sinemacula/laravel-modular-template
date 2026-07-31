@@ -3308,16 +3308,16 @@
         },
         {
             "name": "sinemacula/laravel-modules",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/laravel-modules.git",
-                "reference": "46afcf33fb179e32a3c355874ec65c6ebd084242"
+                "reference": "26da97ccf5b04f2bc3f1c4c184a741a4ceab9585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/laravel-modules/zipball/46afcf33fb179e32a3c355874ec65c6ebd084242",
-                "reference": "46afcf33fb179e32a3c355874ec65c6ebd084242",
+                "url": "https://api.github.com/repos/sinemacula/laravel-modules/zipball/26da97ccf5b04f2bc3f1c4c184a741a4ceab9585",
+                "reference": "26da97ccf5b04f2bc3f1c4c184a741a4ceab9585",
                 "shasum": ""
             },
             "require": {
@@ -3380,9 +3380,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinemacula/laravel-modules/issues",
-                "source": "https://github.com/sinemacula/laravel-modules/tree/v1.2.0"
+                "source": "https://github.com/sinemacula/laravel-modules/tree/v1.3.0"
             },
-            "time": "2026-07-31T14:54:31+00:00"
+            "time": "2026-07-31T19:47:10+00:00"
         },
         {
             "name": "symfony/clock",

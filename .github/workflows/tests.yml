@@ -67,6 +67,14 @@ jobs:
             -   name: PHPUnit
                 run: composer test:coverage
 
+            # The deploy command caches config, routes, events, views and the
+            # module map. Nothing else in the pipeline runs it, so a failure
+            # here would only ever surface on a deploy. Not paired with
+            # optimize:clear, which clears the cache store and so needs a
+            # migrated database this job has no reason to create.
+            -   name: Optimize
+                run: php artisan optimize
+
             -   name: Publish code coverage
                 if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.php == '8.3' }}
                 uses: qltysh/qlty-action/coverage@v2
