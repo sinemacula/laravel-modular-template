@@ -86,10 +86,20 @@ Module caching is integrated into Laravel's `optimize` / `optimize:clear` lifecy
 ## Development
 
 ```bash
-composer dev             # Server, queue worker, and log viewer
+composer dev             # Development server
 composer test            # Run tests
+composer test:coverage   # Run tests with coverage
+composer test:mutation   # Mutation testing gate
 composer check           # Static analysis and code quality (qlty)
 composer format          # Auto-format code
+composer smells          # Duplication and complexity report (qlty)
+```
+
+Run the queue worker and log viewer alongside the server as needed:
+
+```bash
+php artisan queue:listen --tries=1 --timeout=0
+php artisan pail --timeout=0
 ```
 
 Parallel testing is supported out of the box via ParaTest. Each parallel process gets its own database, seeded
