@@ -14,5 +14,9 @@ return Application::configure(basePath: dirname(__DIR__))
         apiPrefix: '',
     )
     ->withMiddleware(function (Middleware $middleware): void {})
-    ->withExceptions(function (Exceptions $exceptions): void {})
+    ->withExceptions(function (Exceptions $exceptions): void {
+        // Every route in a module is an API route, so the framework default of
+        // matching an "api/*" prefix would never fire here.
+        $exceptions->shouldRenderJsonWhen(static fn (): bool => true);
+    })
     ->create();
