@@ -1,5 +1,6 @@
 *.log
 .DS_Store
+.claude
 .env
 .env.backup
 .env.production
@@ -12,6 +13,7 @@
 /.vscode
 /.zed
 /auth.json
+/.sinemacula
 /build
 /node_modules
 /public/build

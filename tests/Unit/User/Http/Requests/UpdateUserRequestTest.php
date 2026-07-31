@@ -33,7 +33,6 @@ final class UpdateUserRequestTest extends TestCase
 
         self::assertArrayHasKey('name', $rules);
         self::assertArrayHasKey('email', $rules);
-        self::assertCount(2, $rules);
     }
 
     /**

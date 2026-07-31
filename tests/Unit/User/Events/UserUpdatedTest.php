@@ -7,9 +7,10 @@ namespace Tests\Unit\User\Events;
 use App\User\Events\UserUpdated;
 use App\User\Models\User;
 use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Foundation\Testing\Attributes\UnitTest;
 use Illuminate\Queue\SerializesModels;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 /**
  * Unit tests for the UserUpdated event.
@@ -27,6 +28,7 @@ final class UserUpdatedTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testCanBeConstructedWithUser(): void
     {
         $user  = new User;
@@ -41,6 +43,7 @@ final class UserUpdatedTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testUserPropertyIsAccessible(): void
     {
         $user  = new User;
@@ -54,6 +57,7 @@ final class UserUpdatedTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testUserPropertyIsReadonly(): void
     {
         $reflection = new \ReflectionProperty(UserUpdated::class, 'user');
@@ -66,6 +70,7 @@ final class UserUpdatedTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testUsesDispatchableTrait(): void
     {
         self::assertContains(
@@ -79,6 +84,7 @@ final class UserUpdatedTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testUsesSerializesModelsTrait(): void
     {
         self::assertContains(
