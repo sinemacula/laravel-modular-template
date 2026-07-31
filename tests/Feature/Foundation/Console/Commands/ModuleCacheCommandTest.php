@@ -5,6 +5,8 @@ declare(strict_types = 1);
 namespace Tests\Feature\Foundation\Console\Commands;
 
 use PHPUnit\Framework\Attributes\CoversNothing;
+use SineMacula\Laravel\Modules\Configuration\ModuleManifest;
+use SineMacula\Laravel\Modules\Configuration\Modules;
 use Tests\TestCase;
 
 /**
@@ -89,7 +91,7 @@ final class ModuleCacheCommandTest extends TestCase
 
         self::assertFileExists($this->cachePath);
 
-        $modules = require $this->cachePath;
+        $modules = (new ModuleManifest($this->cachePath, Modules::modulesPath()))->read();
 
         self::assertIsArray($modules);
         self::assertArrayHasKey('foundation', $modules);

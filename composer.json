@@ -21,7 +21,7 @@
         "ext-pdo": "*",
         "laravel/framework": "^13.0",
         "laravel/tinker": "^3.0",
-        "sinemacula/laravel-modules": "*"
+        "sinemacula/laravel-modules": "^1.0"
     },
     "require-dev": {
         "ext-posix": "*",
@@ -30,6 +30,7 @@
         "doctrine/coding-standard": "^14.0",
         "fakerphp/faker": "^1.23",
         "friendsofphp/php-cs-fixer": "^3.94",
+        "infection/infection": "^0.33.3",
         "larastan/larastan": "^3.9",
         "laravel/pail": "^1.2.5",
         "laravel/pint": "^1.27",
@@ -79,6 +80,15 @@
         "test": [
             "@php artisan test"
         ],
+        "test:coverage": [
+            "@php artisan test --parallel --coverage-clover clover.xml"
+        ],
+        "test:mutation": [
+            "@php vendor/bin/infection --configuration=infection.json5 --only-covering-test-cases --threads=max --git-diff-lines --git-diff-base=origin/master --map-source-class-to-test --min-msi=90 --min-covered-msi=90 --ignore-msi-with-no-mutations"
+        ],
+        "test:mutation:full": [
+            "@php vendor/bin/infection --configuration=infection.full.json5 --only-covering-test-cases --threads=max"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
@@ -111,6 +121,7 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
+            "infection/extension-installer": true,
             "phpstan/extension-installer": true
         }
     },
