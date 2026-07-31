@@ -6,8 +6,9 @@ namespace Tests\Unit\User\Policies;
 
 use App\User\Models\User;
 use App\User\Policies\UserPolicy;
+use Illuminate\Foundation\Testing\Attributes\UnitTest;
 use PHPUnit\Framework\Attributes\CoversClass;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 /**
  * Unit tests for the UserPolicy.
@@ -42,6 +43,7 @@ final class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testViewReturnsTrueForSameUser(): void
     {
         $user     = new User;
@@ -56,6 +58,7 @@ final class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testViewReturnsFalseForDifferentUser(): void
     {
         $auth     = new User;
@@ -73,6 +76,7 @@ final class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testUpdateReturnsTrueForSameUser(): void
     {
         $user     = new User;
@@ -87,6 +91,7 @@ final class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testUpdateReturnsFalseForDifferentUser(): void
     {
         $auth     = new User;
@@ -104,6 +109,7 @@ final class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testDeleteReturnsTrueForSameUser(): void
     {
         $user     = new User;
@@ -118,6 +124,7 @@ final class UserPolicyTest extends TestCase
      *
      * @return void
      */
+    #[UnitTest]
     public function testDeleteReturnsFalseForDifferentUser(): void
     {
         $auth     = new User;

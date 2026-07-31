@@ -3,13 +3,14 @@
     xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     colors="true"
+    cacheDirectory=".phpunit.cache"
 >
     <testsuites>
         <testsuite name="Unit">
-            <directory>tests/Unit</directory>
+            <directory suffix="Test.php">tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory>tests/Feature</directory>
+            <directory suffix="Test.php">tests/Feature</directory>
         </testsuite>
     </testsuites>
     <source>
@@ -19,7 +20,9 @@
             <directory>database/seeders</directory>
         </include>
         <exclude>
-            <file>modules/User/Http/routes.php</file>
+            <!-- Route declarations are configuration, and every module has its
+                own, so match by name rather than listing each one. -->
+            <directory suffix="routes.php">modules</directory>
         </exclude>
     </source>
     <php>
