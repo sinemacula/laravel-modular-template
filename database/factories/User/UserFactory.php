@@ -41,9 +41,9 @@ final class UserFactory extends Factory
     /**
      * Indicate that the user's email address should be verified.
      *
-     * @return static
+     * @return self
      */
-    public function verified(): static
+    public function verified(): self
     {
         return $this->state(['email_verified_at' => now()]);
     }
@@ -51,9 +51,9 @@ final class UserFactory extends Factory
     /**
      * Indicate that the user has a remember token.
      *
-     * @return static
+     * @return self
      */
-    public function remembered(): static
+    public function remembered(): self
     {
         return $this->state(['remember_token' => Str::random(10)]);
     }
