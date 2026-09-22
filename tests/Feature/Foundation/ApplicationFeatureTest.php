@@ -6,6 +6,7 @@ namespace Tests\Feature\Foundation;
 
 use PHPUnit\Framework\Attributes\CoversNothing;
 use SineMacula\Laravel\Modules\Application;
+use SineMacula\Laravel\Modules\Exceptions\ModuleException;
 use Tests\TestCase;
 
 /**
@@ -103,15 +104,16 @@ final class ApplicationFeatureTest extends TestCase
     }
 
     /**
-     * Test that resourcePath strips the module:: prefix and does not leak it
-     * into the filesystem path.
+     * Test that a module prefix naming a module with no resources directory is
+     * rejected rather than resolving to the application directory.
      *
      * @return void
      */
-    public function testApplicationResourcePathStripsModulePrefix(): void
+    public function testApplicationResourcePathRejectsModuleWithoutResources(): void
     {
-        $path = app()->resourcePath('foundation::views');
+        $this->expectException(ModuleException::class);
+        $this->expectExceptionMessage('Module [foundation] has no resources directory.');
 
-        self::assertStringNotContainsString('::', $path);
+        app()->resourcePath('foundation::views');
     }
 }
