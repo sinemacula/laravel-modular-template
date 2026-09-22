@@ -3308,16 +3308,16 @@
         },
         {
             "name": "sinemacula/laravel-modules",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/laravel-modules.git",
-                "reference": "26da97ccf5b04f2bc3f1c4c184a741a4ceab9585"
+                "reference": "42181534bb76f5043fa588e72a7f4d88972e88f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/laravel-modules/zipball/26da97ccf5b04f2bc3f1c4c184a741a4ceab9585",
-                "reference": "26da97ccf5b04f2bc3f1c4c184a741a4ceab9585",
+                "url": "https://api.github.com/repos/sinemacula/laravel-modules/zipball/42181534bb76f5043fa588e72a7f4d88972e88f0",
+                "reference": "42181534bb76f5043fa588e72a7f4d88972e88f0",
                 "shasum": ""
             },
             "require": {
@@ -3327,7 +3327,7 @@
             "require-dev": {
                 "brianium/paratest": "^7.20",
                 "doctrine/coding-standard": "^14.0",
-                "friendsofphp/php-cs-fixer": "^3.94",
+                "friendsofphp/php-cs-fixer": "^3.95.19",
                 "infection/infection": "^0.33.3",
                 "larastan/larastan": "^3.9",
                 "mockery/mockery": "^1.6",
@@ -3340,9 +3340,9 @@
                 "phpstan/phpstan-phpunit": "^2.0",
                 "phpstan/phpstan-strict-rules": "^2.0",
                 "phpunit/phpunit": "^12.5",
-                "sinemacula/coding-standards-laravel": "^1.5.0",
+                "sinemacula/coding-standards-laravel": "^1.6.1",
                 "slevomat/coding-standard": "^8.28",
-                "squizlabs/php_codesniffer": "^4.0"
+                "squizlabs/php_codesniffer": "^3.13.6 || ^4.0.2"
             },
             "type": "library",
             "extra": {
@@ -3380,9 +3380,9 @@
             ],
             "support": {
                 "issues": "https://github.com/sinemacula/laravel-modules/issues",
-                "source": "https://github.com/sinemacula/laravel-modules/tree/v1.3.0"
+                "source": "https://github.com/sinemacula/laravel-modules/tree/v1.4.0"
             },
-            "time": "2026-07-31T19:47:10+00:00"
+            "time": "2026-09-22T19:11:00+00:00"
         },
         {
             "name": "symfony/clock",
