@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "40d525aa8757570e01fadafc8ae0aeac",
+    "content-hash": "ebe4bb8f48dc0ce22e7edcd79e6e569d",
     "packages": [
         {
             "name": "brick/math",
@@ -11128,16 +11128,16 @@
         },
         {
             "name": "sinemacula/coding-standards",
-            "version": "v1.24.0",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/coding-standards.git",
-                "reference": "d2ecdcf902db0528de85066d32708a6bc5c857dc"
+                "reference": "8710e8ad40b68cb191faf638928731176f295ce1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/coding-standards/zipball/d2ecdcf902db0528de85066d32708a6bc5c857dc",
-                "reference": "d2ecdcf902db0528de85066d32708a6bc5c857dc",
+                "url": "https://api.github.com/repos/sinemacula/coding-standards/zipball/8710e8ad40b68cb191faf638928731176f295ce1",
+                "reference": "8710e8ad40b68cb191faf638928731176f295ce1",
                 "shasum": ""
             },
             "require": {
@@ -11185,29 +11185,29 @@
             "description": "Centralized coding standards, static analysis configurations, and code quality tooling for all Sine Macula repositories.",
             "support": {
                 "issues": "https://github.com/sinemacula/coding-standards/issues",
-                "source": "https://github.com/sinemacula/coding-standards/tree/v1.24.0"
+                "source": "https://github.com/sinemacula/coding-standards/tree/v1.25.0"
             },
-            "time": "2026-09-22T02:32:40+00:00"
+            "time": "2026-09-26T06:04:17+00:00"
         },
         {
             "name": "sinemacula/coding-standards-laravel",
-            "version": "v1.6.1",
+            "version": "v1.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/coding-standards-laravel.git",
-                "reference": "d56d7a89f364bc5a68fb7ff0c494722058247aec"
+                "reference": "ab764952edb4cb43f36a589466ebd7bb7da9f31f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/coding-standards-laravel/zipball/d56d7a89f364bc5a68fb7ff0c494722058247aec",
-                "reference": "d56d7a89f364bc5a68fb7ff0c494722058247aec",
+                "url": "https://api.github.com/repos/sinemacula/coding-standards-laravel/zipball/ab764952edb4cb43f36a589466ebd7bb7da9f31f",
+                "reference": "ab764952edb4cb43f36a589466ebd7bb7da9f31f",
                 "shasum": ""
             },
             "require": {
                 "composer/semver": "^3.0",
                 "friendsofphp/php-cs-fixer": "^3.0",
                 "php": "^8.3",
-                "sinemacula/coding-standards": "^1.24.0"
+                "sinemacula/coding-standards": "^1.25.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
@@ -11252,9 +11252,9 @@
             "description": "Laravel-specific coding standards, static-analysis rules, and code-quality tooling for Sine Macula's Laravel repositories.",
             "support": {
                 "issues": "https://github.com/sinemacula/coding-standards-laravel/issues",
-                "source": "https://github.com/sinemacula/coding-standards-laravel/tree/v1.6.1"
+                "source": "https://github.com/sinemacula/coding-standards-laravel/tree/v1.6.2"
             },
-            "time": "2026-09-22T14:32:10+00:00"
+            "time": "2026-09-26T06:33:51+00:00"
         },
         {
             "name": "slevomat/coding-standard",
