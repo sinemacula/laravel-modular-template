@@ -6765,16 +6765,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.4.4",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "198166618906cb2de69b95d7d47e5fa8aa1b2b95"
+                "reference": "528948210cc46f967a4b98e83b19e76f2b504993"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/198166618906cb2de69b95d7d47e5fa8aa1b2b95",
-                "reference": "198166618906cb2de69b95d7d47e5fa8aa1b2b95",
+                "url": "https://api.github.com/repos/composer/semver/zipball/528948210cc46f967a4b98e83b19e76f2b504993",
+                "reference": "528948210cc46f967a4b98e83b19e76f2b504993",
                 "shasum": ""
             },
             "require": {
@@ -6816,7 +6816,7 @@
                     "homepage": "http://robbast.nl"
                 }
             ],
-            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "description": "Version comparison library that offers utilities, version constraint parsing and validation.",
             "keywords": [
                 "semantic",
                 "semver",
@@ -6826,7 +6826,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.4.4"
+                "source": "https://github.com/composer/semver/tree/3.5.1"
             },
             "funding": [
                 {
@@ -6838,7 +6838,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-20T19:15:30+00:00"
+            "time": "2026-10-05T13:12:12+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -11166,16 +11166,16 @@
         },
         {
             "name": "sinemacula/coding-standards",
-            "version": "v1.25.0",
+            "version": "v1.26.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/coding-standards.git",
-                "reference": "8710e8ad40b68cb191faf638928731176f295ce1"
+                "reference": "0d15c1c88029455601143feb59994ba81d075a18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/coding-standards/zipball/8710e8ad40b68cb191faf638928731176f295ce1",
-                "reference": "8710e8ad40b68cb191faf638928731176f295ce1",
+                "url": "https://api.github.com/repos/sinemacula/coding-standards/zipball/0d15c1c88029455601143feb59994ba81d075a18",
+                "reference": "0d15c1c88029455601143feb59994ba81d075a18",
                 "shasum": ""
             },
             "require": {
@@ -11223,9 +11223,9 @@
             "description": "Centralized coding standards, static analysis configurations, and code quality tooling for all Sine Macula repositories.",
             "support": {
                 "issues": "https://github.com/sinemacula/coding-standards/issues",
-                "source": "https://github.com/sinemacula/coding-standards/tree/v1.25.0"
+                "source": "https://github.com/sinemacula/coding-standards/tree/v1.26.0"
             },
-            "time": "2026-09-26T06:04:17+00:00"
+            "time": "2026-09-30T17:35:15+00:00"
         },
         {
             "name": "sinemacula/coding-standards-laravel",
