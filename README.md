@@ -1,8 +1,12 @@
-# Laravel Modular Template
+<h1 align="center">Laravel Modular Template</h1>
+
+<div align="center">
 
 [![Build Status](https://github.com/sinemacula/laravel-modular-template/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/sinemacula/laravel-modular-template/actions/workflows/tests.yml)
 [![Maintainability](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/maintainability.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
 [![Code Coverage](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/coverage.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
+
+</div>
 
 A GitHub template for building **stateless API** applications with Laravel 13 using a modular architecture. Powered by
 [`sinemacula/laravel-modules`](https://github.com/sinemacula/laravel-modules), the standard `app/` directory is replaced
