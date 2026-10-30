@@ -2,9 +2,13 @@
 
 <div align="center">
 
+[![PHP Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsinemacula%2Flaravel-modular-template%2Fmaster%2Fcomposer.json&query=%24.require.php&label=php)](https://github.com/sinemacula/laravel-modular-template/blob/master/composer.json)
+[![Laravel Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsinemacula%2Flaravel-modular-template%2Fmaster%2Fcomposer.json&query=%24.require%5B%22laravel%2Fframework%22%5D&label=laravel)](https://github.com/sinemacula/laravel-modular-template/blob/master/composer.json)
 [![Build Status](https://github.com/sinemacula/laravel-modular-template/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/sinemacula/laravel-modular-template/actions/workflows/tests.yml)
+[![Quality Gates](https://github.com/sinemacula/laravel-modular-template/actions/workflows/quality-gates.yml/badge.svg?branch=master)](https://github.com/sinemacula/laravel-modular-template/actions/workflows/quality-gates.yml)
 [![Maintainability](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/maintainability.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
 [![Code Coverage](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template/coverage.svg)](https://qlty.sh/gh/sinemacula/projects/laravel-modular-template)
+[![License](https://img.shields.io/github/license/sinemacula/laravel-modular-template.svg)](LICENSE)
 
 </div>
 
