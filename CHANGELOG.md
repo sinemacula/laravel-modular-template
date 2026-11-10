@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/sinemacula/laravel-modular-template/compare/v1.0.2...v1.0.3) (2026-11-10)
+
+
+### Bug Fixes
+
+* clear the qlty findings and drop configuration the shared source provides ([#103](https://github.com/sinemacula/laravel-modular-template/issues/103)) ([50d0933](https://github.com/sinemacula/laravel-modular-template/commit/50d0933ee23f8c803e17f331a80d829acc69234d))
+
 ## [1.0.2](https://github.com/sinemacula/laravel-modular-template/compare/v1.0.1...v1.0.2) (2026-09-22)
 
 
