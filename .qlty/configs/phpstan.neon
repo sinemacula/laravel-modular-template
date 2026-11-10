@@ -1,6 +1,4 @@
 parameters:
-    level: 8
-
     scanDirectories:
         - %currentWorkingDirectory%/database
         - %currentWorkingDirectory%/modules
