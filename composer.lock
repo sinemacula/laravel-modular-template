@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b65a500638674f542c4dd70990c8a6d",
+    "content-hash": "c13912af34ae3cb2696d5a6232e81097",
     "packages": [
         {
             "name": "brick/math",
@@ -11167,16 +11167,16 @@
         },
         {
             "name": "sinemacula/coding-standards",
-            "version": "v1.28.0",
+            "version": "v1.29.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/coding-standards.git",
-                "reference": "2d6080d90026fde80dac59767bdf15e3484c2488"
+                "reference": "5d02cc0ac5c00dbdda65893fa5b19ab7bf374a0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/coding-standards/zipball/2d6080d90026fde80dac59767bdf15e3484c2488",
-                "reference": "2d6080d90026fde80dac59767bdf15e3484c2488",
+                "url": "https://api.github.com/repos/sinemacula/coding-standards/zipball/5d02cc0ac5c00dbdda65893fa5b19ab7bf374a0c",
+                "reference": "5d02cc0ac5c00dbdda65893fa5b19ab7bf374a0c",
                 "shasum": ""
             },
             "require": {
@@ -11224,30 +11224,30 @@
             "description": "Centralized coding standards, static analysis configurations, and code quality tooling for all Sine Macula repositories.",
             "support": {
                 "issues": "https://github.com/sinemacula/coding-standards/issues",
-                "source": "https://github.com/sinemacula/coding-standards/tree/v1.28.0"
+                "source": "https://github.com/sinemacula/coding-standards/tree/v1.29.0"
             },
-            "time": "2026-11-02T21:54:25+00:00",
-            "published-time": "2026-11-02T21:54:45+00:00"
+            "time": "2026-11-10T00:12:44+00:00",
+            "published-time": "2026-11-10T00:13:06+00:00"
         },
         {
             "name": "sinemacula/coding-standards-laravel",
-            "version": "v1.6.3",
+            "version": "v1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sinemacula/coding-standards-laravel.git",
-                "reference": "949f850a23b860a160662e272a618655ee66908f"
+                "reference": "23ae73fae9675a36325b19a29de7267f02ece6f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sinemacula/coding-standards-laravel/zipball/949f850a23b860a160662e272a618655ee66908f",
-                "reference": "949f850a23b860a160662e272a618655ee66908f",
+                "url": "https://api.github.com/repos/sinemacula/coding-standards-laravel/zipball/23ae73fae9675a36325b19a29de7267f02ece6f9",
+                "reference": "23ae73fae9675a36325b19a29de7267f02ece6f9",
                 "shasum": ""
             },
             "require": {
                 "composer/semver": "^3.0",
                 "friendsofphp/php-cs-fixer": "^3.0",
                 "php": "^8.3",
-                "sinemacula/coding-standards": "^1.28.0"
+                "sinemacula/coding-standards": "^1.29.0"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
@@ -11292,10 +11292,10 @@
             "description": "Laravel-specific coding standards, static-analysis rules, and code-quality tooling for Sine Macula's Laravel repositories.",
             "support": {
                 "issues": "https://github.com/sinemacula/coding-standards-laravel/issues",
-                "source": "https://github.com/sinemacula/coding-standards-laravel/tree/v1.6.3"
+                "source": "https://github.com/sinemacula/coding-standards-laravel/tree/v1.7.1"
             },
-            "time": "2026-11-03T01:33:45+00:00",
-            "published-time": "2026-11-03T01:34:01+00:00"
+            "time": "2026-11-10T01:04:21+00:00",
+            "published-time": "2026-11-10T01:04:37+00:00"
         },
         {
             "name": "slevomat/coding-standard",
