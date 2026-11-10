@@ -175,6 +175,7 @@ final class UserFactoryTest extends TestCase
         /** @var \App\User\Models\User $user */
         $user = User::factory()->remembered()->create();
 
+        self::assertIsString($user->remember_token);
         self::assertSame(10, strlen($user->remember_token));
     }
 
