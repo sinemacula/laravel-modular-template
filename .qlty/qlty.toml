@@ -43,7 +43,7 @@ default = true
 [[source]]
 name = "sinemacula"
 repository = "https://github.com/sinemacula/coding-standards"
-tag = "v1.31.0"
+tag = "v1.31.1"
 
 # Application repository, so a tracked .env.example defines the environment
 # contract every consumer copies. Not present in the package repositories.
@@ -61,7 +61,7 @@ package_filters = ["slevomat", "dealerdirect", "sinemacula"]
 # package_file makes qlty ignore extra_packages.
 [[plugin]]
 name = "php-cs-fixer"
-extra_packages = ["sinemacula/coding-standards@1.31.0"]
+extra_packages = ["sinemacula/coding-standards@1.31.1"]
 
 [[plugin]]
 name = "phpstan"
